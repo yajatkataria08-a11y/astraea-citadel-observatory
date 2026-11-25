@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
+<defs>
+  <linearGradient id="apibg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#07101E"/>
+    <stop offset="100%" stop-color="#040812"/>
+  </linearGradient>
+  <style>
+    @keyframes fadeRow { from{opacity:0;transform:translateX(-12px)} to{opacity:1;transform:translateX(0)} }
+    @keyframes fadeRowR { from{opacity:0;transform:translateX(12px)} to{opacity:1;transform:translateX(0)} }
+    @keyframes dotBlink { 0%,100%{opacity:.3} 50%{opacity:1} }
+    @keyframes borderP { 0%,100%{opacity:.3} 50%{opacity:.7} }
+    @keyframes urlGlow { 0%,100%{filter:drop-shadow(0 0 4px #A5F3FC40)} 50%{filter:drop-shadow(0 0 12px #A5F3FC80)} }
+  </style>
+</defs>
+
+<!-- BG -->
+<rect width="1200" height="420" fill="url(#apibg)"/>
+<rect x="1" y="1" width="1198" height="418" rx="8" fill="none" stroke="#A5F3FC" stroke-width=".8" stroke-opacity=".25" style="animation:borderP 4s ease-in-out infinite"/>
+
+<!-- HEADER -->
+<rect width="1200" height="52" fill="#060F1C"/>
+<line x1="0" y1="52" x2="1200" y2="52" stroke="#A5F3FC" stroke-width=".5" stroke-opacity=".25"/>
+<text x="24" y="22" fill="#A5F3FC" font-size="11" font-family="ui-monospace,monospace" letter-spacing="2">API REFERENCE</text>
+<text x="24" y="41" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Base URL: http://127.0.0.1:8000  ·  OpenAPI docs at /docs  ·  Bearer token auth</text>
+<!-- Status indicator -->
+<circle cx="1150" cy="26" r="5" fill="#34D399" style="animation:dotBlink 1.5s ease-in-out infinite"/>
+<text x="1162" y="30" fill="#34D399" font-size="10" font-family="ui-monospace,monospace">LIVE</text>
+
+<!-- URL badge -->
+<rect x="830" y="14" width="260" height="24" rx="4" fill="#0A1628" stroke="#A5F3FC" stroke-width=".8" stroke-opacity=".4"/>
+<text x="844" y="30" fill="#A5F3FC" font-size="11" font-family="ui-monospace,monospace" style="animation:urlGlow 3s ease-in-out infinite">http://127.0.0.1:8000</text>
+
+<!-- CENTER DIVIDER -->
+<line x1="600" y1="52" x2="600" y2="380" stroke="#1E293B" stroke-width="1"/>
+
+<!-- ===== LEFT: SCIENCE ENDPOINTS ===== -->
+<text x="300" y="78" text-anchor="middle" fill="#64748B" font-size="10" font-family="ui-monospace,monospace" letter-spacing="2">SCIENCE API · 11 ENDPOINTS</text>
+
+<!-- Helper: method badge macros defined inline -->
+<!-- GET badge: cyan, POST: amber, SSE: purple -->
+
+<!-- /health -->
+<g opacity="0" style="animation:fadeRow .4s .2s ease-out forwards">
+  <rect x="24" y="88" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="100" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="100" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/health</text>
+  <text x="380" y="100" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">System health check</text>
+</g>
+<!-- /model/info -->
+<g opacity="0" style="animation:fadeRow .4s .35s ease-out forwards">
+  <rect x="24" y="112" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="124" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="124" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/model/info</text>
+  <text x="380" y="124" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">LightGBM metadata &amp; version</text>
+</g>
+<!-- /targets -->
+<g opacity="0" style="animation:fadeRow .4s .5s ease-out forwards">
+  <rect x="24" y="136" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="148" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="148" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/targets</text>
+  <text x="380" y="148" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Paginated catalog list</text>
+</g>
+<!-- /targets/featured -->
+<g opacity="0" style="animation:fadeRow .4s .65s ease-out forwards">
+  <rect x="24" y="160" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="172" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="172" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/targets/featured</text>
+  <text x="380" y="172" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Demo target shortlist</text>
+</g>
+<!-- /targets/{id} -->
+<g opacity="0" style="animation:fadeRow .4s .8s ease-out forwards">
+  <rect x="24" y="184" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="196" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="196" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/targets/<tspan fill="#A5F3FC">{id}</tspan></text>
+  <text x="380" y="196" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Full target detail + vetting</text>
+</g>
+<!-- /shap/{id} -->
+<g opacity="0" style="animation:fadeRow .4s .95s ease-out forwards">
+  <rect x="24" y="208" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="220" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="220" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/shap/<tspan fill="#A5F3FC">{id}</tspan></text>
+  <text x="380" y="220" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">TreeSHAP waterfall values</text>
+</g>
+<!-- /physics/{id} -->
+<g opacity="0" style="animation:fadeRow .4s 1.1s ease-out forwards">
+  <rect x="24" y="232" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="244" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="244" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/physics/<tspan fill="#A5F3FC">{id}</tspan></text>
+  <text x="380" y="244" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Monte Carlo HZ + composition</text>
+</g>
+<!-- POST /triage/{id}/verdict -->
+<g opacity="0" style="animation:fadeRow .4s 1.25s ease-out forwards">
+  <rect x="24" y="256" width="44" height="16" rx="3" fill="#422006"/>
+  <text x="46" y="268" text-anchor="middle" fill="#FB923C" font-size="9" font-family="ui-monospace,monospace" font-weight="700">POST</text>
+  <text x="74" y="268" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/triage/<tspan fill="#A5F3FC">{id}</tspan>/verdict</text>
+  <text x="380" y="268" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Save analyst verdict</text>
+</g>
+<!-- POST /batch/scan -->
+<g opacity="0" style="animation:fadeRow .4s 1.4s ease-out forwards">
+  <rect x="24" y="280" width="44" height="16" rx="3" fill="#422006"/>
+  <text x="46" y="292" text-anchor="middle" fill="#FB923C" font-size="9" font-family="ui-monospace,monospace" font-weight="700">POST</text>
+  <text x="74" y="292" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/batch/scan</text>
+  <text x="380" y="292" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Queue async batch job</text>
+</g>
+<!-- GET SSE /batch/stream -->
+<g opacity="0" style="animation:fadeRow .4s 1.55s ease-out forwards">
+  <rect x="24" y="304" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="316" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <rect x="66" y="304" width="30" height="16" rx="3" fill="#2E1065"/>
+  <text x="81" y="316" text-anchor="middle" fill="#C084FC" font-size="8" font-family="ui-monospace,monospace" font-weight="700">SSE</text>
+  <text x="100" y="316" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/batch/stream/<tspan fill="#A5F3FC">{id}</tspan></text>
+  <text x="380" y="316" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Real-time results stream</text>
+</g>
+<!-- GET /batch/{id} -->
+<g opacity="0" style="animation:fadeRow .4s 1.7s ease-out forwards">
+  <rect x="24" y="328" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="43" y="340" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="68" y="340" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/batch/<tspan fill="#A5F3FC">{id}</tspan></text>
+  <text x="380" y="340" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Poll batch status</text>
+</g>
+
+<!-- ===== RIGHT: AUTH ENDPOINTS ===== -->
+<text x="900" y="78" text-anchor="middle" fill="#64748B" font-size="10" font-family="ui-monospace,monospace" letter-spacing="2">AUTH API · 6 ENDPOINTS · /auth/*</text>
+
+<!-- POST /signup -->
+<g opacity="0" style="animation:fadeRowR .4s .4s ease-out forwards">
+  <rect x="620" y="88" width="44" height="16" rx="3" fill="#422006"/>
+  <text x="642" y="100" text-anchor="middle" fill="#FB923C" font-size="9" font-family="ui-monospace,monospace" font-weight="700">POST</text>
+  <text x="670" y="100" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/auth/signup</text>
+  <text x="1176" y="100" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Create account · scrypt hash</text>
+</g>
+<!-- POST /login -->
+<g opacity="0" style="animation:fadeRowR .4s .6s ease-out forwards">
+  <rect x="620" y="112" width="44" height="16" rx="3" fill="#422006"/>
+  <text x="642" y="124" text-anchor="middle" fill="#FB923C" font-size="9" font-family="ui-monospace,monospace" font-weight="700">POST</text>
+  <text x="670" y="124" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/auth/login</text>
+  <text x="1176" y="124" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Obtain HMAC bearer token</text>
+</g>
+<!-- GET /me -->
+<g opacity="0" style="animation:fadeRowR .4s .8s ease-out forwards">
+  <rect x="620" y="136" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="639" y="148" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="664" y="148" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/auth/me</text>
+  <rect x="744" y="135" width="68" height="15" rx="3" fill="#0F2041"/>
+  <text x="778" y="147" text-anchor="middle" fill="#60A5FA" font-size="8" font-family="ui-monospace,monospace">🔒 Bearer</text>
+  <text x="1176" y="148" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Profile &amp; quota info</text>
+</g>
+<!-- GET /oauth/{provider}/start -->
+<g opacity="0" style="animation:fadeRowR .4s 1s ease-out forwards">
+  <rect x="620" y="160" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="639" y="172" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="664" y="172" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/auth/oauth/<tspan fill="#A5F3FC">{provider}</tspan>/start</text>
+  <text x="1176" y="172" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">PKCE flow initiation</text>
+</g>
+<!-- GET /oauth/{provider}/callback -->
+<g opacity="0" style="animation:fadeRowR .4s 1.2s ease-out forwards">
+  <rect x="620" y="184" width="38" height="16" rx="3" fill="#134E4A"/>
+  <text x="639" y="196" text-anchor="middle" fill="#34D399" font-size="9" font-family="ui-monospace,monospace" font-weight="700">GET</text>
+  <text x="664" y="196" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/auth/oauth/<tspan fill="#A5F3FC">{provider}</tspan>/callback</text>
+  <text x="1176" y="196" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Exchange code → token</text>
+</g>
+<!-- DELETE /logout -->
+<g opacity="0" style="animation:fadeRowR .4s 1.4s ease-out forwards">
+  <rect x="620" y="208" width="52" height="16" rx="3" fill="#2D0A0A"/>
+  <text x="646" y="220" text-anchor="middle" fill="#F87171" font-size="9" font-family="ui-monospace,monospace" font-weight="700">DELETE</text>
+  <text x="678" y="220" fill="#E2E8F0" font-size="11" font-family="ui-monospace,monospace">/auth/logout</text>
+  <text x="1176" y="220" text-anchor="end" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Revoke token</text>
+</g>
+
+<!-- OAuth providers box -->
+<rect x="620" y="244" width="556" height="90" rx="6" fill="#070F1C" stroke="#334155" stroke-width=".8" opacity="0" style="animation:fadeRowR .5s 1.6s ease-out forwards"/>
+<text x="898" y="264" text-anchor="middle" fill="#64748B" font-size="9" font-family="ui-monospace,monospace" letter-spacing="2" opacity="0" style="animation:fadeRowR .5s 1.7s ease-out forwards">OAUTH2 PKCE PROVIDERS</text>
+<rect x="640" y="272" width="80" height="28" rx="4" fill="#0A1628" stroke="#4285F4" stroke-width=".8" opacity="0" style="animation:fadeRowR .4s 1.8s ease-out forwards"/>
+<text x="680" y="291" text-anchor="middle" fill="#4285F4" font-size="11" font-family="system-ui,sans-serif" font-weight="700" opacity="0" style="animation:fadeRowR .4s 1.9s ease-out forwards">Google</text>
+<rect x="740" y="272" width="80" height="28" rx="4" fill="#0A1628" stroke="#24292F" stroke-width=".8" opacity="0" style="animation:fadeRowR .4s 2s ease-out forwards"/>
+<text x="780" y="291" text-anchor="middle" fill="#E2E8F0" font-size="11" font-family="system-ui,sans-serif" font-weight="700" opacity="0" style="animation:fadeRowR .4s 2.1s ease-out forwards">GitHub</text>
+<rect x="840" y="272" width="104" height="28" rx="4" fill="#0A1628" stroke="#0078D4" stroke-width=".8" opacity="0" style="animation:fadeRowR .4s 2.2s ease-out forwards"/>
+<text x="892" y="291" text-anchor="middle" fill="#0078D4" font-size="11" font-family="system-ui,sans-serif" font-weight="700" opacity="0" style="animation:fadeRowR .4s 2.3s ease-out forwards">Microsoft</text>
+<text x="898" y="322" text-anchor="middle" fill="#334155" font-size="9" font-family="ui-monospace,monospace" opacity="0" style="animation:fadeRowR .4s 2.4s ease-out forwards">scrypt · HMAC-SHA256 · PKCE S256</text>
+
+<!-- FOOTER -->
+<line x1="0" y1="380" x2="1200" y2="380" stroke="#1E293B" stroke-width="1"/>
+<rect x="0" y="380" width="1200" height="40" fill="#050D1A"/>
+<text x="600" y="404" text-anchor="middle" fill="#334155" font-size="10" font-family="ui-monospace,monospace" letter-spacing="2">DEMO CREDENTIALS: test@example.com / password123  ·  FastAPI Swagger at /docs  ·  ReDoc at /redoc</text>
+
+<!-- CORNER -->
+<path d="M2,2 L38,2 L38,4 L4,4 L4,38 L2,38Z" fill="#A5F3FC" opacity=".4"/>
+<path d="M1198,2 L1162,2 L1162,4 L1196,4 L1196,38 L1198,38Z" fill="#A5F3FC" opacity=".4"/>
+<path d="M2,418 L38,418 L38,416 L4,416 L4,382 L2,382Z" fill="#A5F3FC" opacity=".4"/>
+<path d="M1198,418 L1162,418 L1162,416 L1196,416 L1196,382 L1198,382Z" fill="#A5F3FC" opacity=".4"/>
+</svg>

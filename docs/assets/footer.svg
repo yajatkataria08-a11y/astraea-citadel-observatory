@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="1200" height="140">
+<defs>
+  <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#040812"/>
+    <stop offset="50%" stop-color="#0A1428"/>
+    <stop offset="100%" stop-color="#040812"/>
+  </linearGradient>
+  <linearGradient id="fline" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#D4AF37" stop-opacity="0"/>
+    <stop offset="25%" stop-color="#D4AF37" stop-opacity="0.7"/>
+    <stop offset="50%" stop-color="#A5F3FC" stop-opacity="0.8"/>
+    <stop offset="75%" stop-color="#D4AF37" stop-opacity="0.7"/>
+    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+  </linearGradient>
+  <style>
+    @keyframes tw { 0%,100%{opacity:.15} 50%{opacity:.95} }
+    @keyframes pulseText { 0%,100%{opacity:.7} 50%{opacity:1} }
+    @keyframes sweep { 0%{transform:translateX(-200px)} 100%{transform:translateX(1400px)} }
+  </style>
+</defs>
+
+<rect width="1200" height="140" fill="url(#fbg)"/>
+<rect x="0" y="0" width="1200" height="2" fill="url(#fline)"/>
+
+<!-- Animated sweep glow along top line -->
+<rect x="0" y="0" width="180" height="2" fill="#A5F3FC" opacity=".8" style="animation:sweep 4.5s linear infinite"/>
+
+<!-- Twinkling background stars -->
+<circle cx="90" cy="36" r="1" fill="#E2E8F0" style="animation:tw 2.1s infinite"/>
+<circle cx="170" cy="94" r=".8" fill="#A5F3FC" style="animation:tw 2.8s infinite .4s"/>
+<circle cx="280" cy="48" r="1.1" fill="#D4AF37" style="animation:tw 2.4s infinite .8s"/>
+<circle cx="420" cy="108" r=".7" fill="#E2E8F0" style="animation:tw 3s infinite .2s"/>
+<circle cx="780" cy="106" r=".8" fill="#A5F3FC" style="animation:tw 2.6s infinite 1s"/>
+<circle cx="920" cy="44" r="1.1" fill="#D4AF37" style="animation:tw 2.2s infinite .5s"/>
+<circle cx="1040" cy="96" r=".8" fill="#E2E8F0" style="animation:tw 2.9s infinite .7s"/>
+<circle cx="1130" cy="38" r="1" fill="#A5F3FC" style="animation:tw 2s infinite 1.2s"/>
+
+<!-- Rotating mini astrolabe -->
+<g transform="translate(600, 44)">
+  <circle r="18" fill="none" stroke="#D4AF37" stroke-width=".8" stroke-opacity=".45" stroke-dasharray="3 4">
+    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="11" fill="none" stroke="#A5F3FC" stroke-width=".6" stroke-opacity=".5">
+    <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="16s" repeatCount="indefinite"/>
+  </circle>
+  <text text-anchor="middle" dy=".35em" fill="#D4AF37" font-size="13" font-family="Georgia,serif">✦</text>
+</g>
+
+<text x="600" y="84" text-anchor="middle" fill="#D4AF37" font-size="15" font-family="Georgia,'Times New Roman',serif" letter-spacing="6" style="animation:pulseText 3.5s ease-in-out infinite">ASTRÆA · CITADEL OBSERVATORY</text>
+<text x="600" y="106" text-anchor="middle" fill="#94A3B8" font-size="10" font-family="ui-monospace,monospace" letter-spacing="2">VIT BHOPAL UNIVERSITY · SCHOOL OF COMPUTING SCIENCE AND ENGINEERING</text>
+<text x="600" y="124" text-anchor="middle" fill="#475569" font-size="9" font-family="ui-monospace,monospace" letter-spacing="1.5">OPEN SOURCE ASTROPHYSICS &amp; EXPLAINABLE AI · BUILT WITH FASTAPI, NEXT.JS 15 &amp; LIGHTGBM</text>
+</svg>

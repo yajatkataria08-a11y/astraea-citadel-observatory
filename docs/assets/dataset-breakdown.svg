@@ -1,66 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="NASA Astronomical Dataset Breakdown and SPHEREx Band Coverage">
-  <defs>
-    <linearGradient id="dsBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#090D1A"/>
-      <stop offset="100%" stop-color="#11182E"/>
-    </linearGradient>
-    <linearGradient id="specBar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="28%" stop-color="#34D399"/>
-      <stop offset="55%" stop-color="#FBBF24"/>
-      <stop offset="80%" stop-color="#F97316"/>
-      <stop offset="100%" stop-color="#EF4444"/>
-    </linearGradient>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340">
+<defs>
+  <linearGradient id="dsbg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#07101E"/>
+    <stop offset="100%" stop-color="#040812"/>
+  </linearGradient>
+  <linearGradient id="specGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#8B5CF6"/>
+    <stop offset="22%" stop-color="#3B82F6"/>
+    <stop offset="45%" stop-color="#06B6D4"/>
+    <stop offset="68%" stop-color="#10B981"/>
+    <stop offset="85%" stop-color="#F59E0B"/>
+    <stop offset="100%" stop-color="#EF4444"/>
+  </linearGradient>
+  <style>
+    @keyframes cardUp { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes borderP { 0%,100%{opacity:.3} 50%{opacity:.7} }
+    @keyframes pulseDot { 0%,100%{opacity:.4} 50%{opacity:1} }
+    @keyframes scanSweep { 0%{transform:translateX(0)} 100%{transform:translateX(1110px)} }
+  </style>
+</defs>
 
-  <rect width="1200" height="300" rx="16" fill="url(#dsBg)" stroke="#334155" stroke-width="1.5"/>
+<rect width="1200" height="340" fill="url(#dsbg)"/>
+<rect x="1" y="1" width="1198" height="338" rx="8" fill="none" stroke="#C084FC" stroke-width=".8" stroke-opacity=".25" style="animation:borderP 4s ease-in-out infinite"/>
 
-  <!-- Header -->
-  <text x="36" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">NASA Exoplanet Archive Parquet Mirror &amp; SPHEREx Spectral Coverage</text>
-  <text x="36" y="60" font-family="ui-monospace, monospace" font-size="12" fill="#94A3B8">14,727 Total Real Catalog Rows (astro/data/raw/*.parquet)  •  Zero Synthetic Label Leakage</text>
+<!-- HEADER -->
+<rect width="1200" height="48" fill="#060F1C"/>
+<line x1="0" y1="48" x2="1200" y2="48" stroke="#C084FC" stroke-width=".5" stroke-opacity=".25"/>
+<text x="24" y="21" fill="#C084FC" font-size="11" font-family="ui-monospace,monospace" letter-spacing="2">CATALOG DATA LAKE</text>
+<text x="24" y="38" fill="#475569" font-size="10" font-family="ui-monospace,monospace">14,727 Real Astronomical Targets · NASA Exoplanet Archive &amp; TESS · Parquet Columnar Store</text>
+<circle cx="1146" cy="24" r="4" fill="#C084FC" style="animation:pulseDot 1.8s ease-in-out infinite"/>
+<text x="1158" y="28" fill="#C084FC" font-size="10" font-family="ui-monospace,monospace">14,727</text>
 
-  <!-- Proportional Bar Chart (Total = 14,727) -->
-  <!-- KOI: 8,054 (54.7%) | PS: 4,296 (29.2%) | TOI: 2,377 (16.1%) -->
-  <g transform="translate(36, 82)">
-    <rect x="0" y="0" width="617" height="28" rx="6" fill="#3B82F6"/>
-    <text x="14" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#FFFFFF">KOI Cumulative: 8,054 (54.7%)</text>
+<!-- PROPORTIONAL STACKED BAR -->
+<text x="24" y="72" fill="#94A3B8" font-size="10" font-family="ui-monospace,monospace" letter-spacing="1.5">CATALOG DISTRIBUTION (100% REAL PARQUET DATA)</text>
+<rect x="24" y="82" width="1152" height="26" rx="6" fill="#0D1628" stroke="#1E293B" stroke-width="1"/>
 
-    <rect x="623" y="0" width="329" height="28" rx="6" fill="#D4AF37"/>
-    <text x="635" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#090A0F">Confirmed PS: 4,296 (29.2%)</text>
+<!-- KOI 54.7% = 630px -->
+<rect x="24" y="82" width="0" height="26" rx="6" fill="#D4AF37" opacity=".9">
+  <animate attributeName="width" from="0" to="630" dur="1.3s" begin=".2s" fill="freeze" calcMode="spline" keySplines=".4,0,.2,1"/>
+</rect>
+<text x="340" y="99" text-anchor="middle" fill="#040812" font-size="11" font-family="ui-monospace,monospace" font-weight="700" opacity="0">
+  KOI · 8,054 (54.7%)
+  <animate attributeName="opacity" from="0" to="1" dur=".4s" begin="1s" fill="freeze"/>
+</text>
 
-    <rect x="958" y="0" width="170" height="28" rx="6" fill="#8B5CF6"/>
-    <text x="968" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#FFFFFF">TOI: 2,377 (16.1%)</text>
-  </g>
+<!-- PS 29.2% = 336px -->
+<rect x="656" y="82" width="0" height="26" rx="3" fill="#A5F3FC" opacity=".9">
+  <animate attributeName="width" from="0" to="336" dur="1.1s" begin=".6s" fill="freeze" calcMode="spline" keySplines=".4,0,.2,1"/>
+</rect>
+<text x="824" y="99" text-anchor="middle" fill="#040812" font-size="11" font-family="ui-monospace,monospace" font-weight="700" opacity="0">
+  PS · 4,296 (29.2%)
+  <animate attributeName="opacity" from="0" to="1" dur=".4s" begin="1.2s" fill="freeze"/>
+</text>
 
-  <!-- 3 Dataset Detail Cards -->
-  <g transform="translate(36, 128)">
-    <!-- KOI -->
-    <rect x="0" y="0" width="362" height="76" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-opacity="0.5"/>
-    <text x="16" y="24" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#93C5FD">koi_cumulative.parquet</text>
-    <text x="16" y="45" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">8,054 Kepler Objects of Interest  •  154 columns</text>
-    <text x="16" y="63" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Group-disjoint kepid split for LightGBM CONFIRMED vs FP</text>
+<!-- TOI 16.1% = 182px -->
+<rect x="994" y="82" width="0" height="26" rx="6" fill="#C084FC" opacity=".9">
+  <animate attributeName="width" from="0" to="182" dur="1s" begin=".9s" fill="freeze" calcMode="spline" keySplines=".4,0,.2,1"/>
+</rect>
+<text x="1085" y="99" text-anchor="middle" fill="#040812" font-size="11" font-family="ui-monospace,monospace" font-weight="700" opacity="0">
+  TOI · 2,377 (16.1%)
+  <animate attributeName="opacity" from="0" to="1" dur=".4s" begin="1.4s" fill="freeze"/>
+</text>
 
-    <!-- PS -->
-    <rect x="383" y="0" width="362" height="76" rx="10" fill="#0F172A" stroke="#D4AF37" stroke-opacity="0.5"/>
-    <text x="399" y="24" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#FDE68A">ps_confirmed_default.parquet</text>
-    <text x="399" y="45" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">4,296 Confirmed Exoplanets  •  415 columns</text>
-    <text x="399" y="63" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">B1 Monte Carlo physics, HZ bounds, TSM/ESM follow-up rank</text>
+<!-- 3 PARQUET CARDS -->
+<!-- Card 1: KOI -->
+<g opacity="0" style="animation:cardUp .5s .4s ease-out forwards">
+  <rect x="24" y="124" width="368" height="106" rx="8" fill="#081222" stroke="#D4AF37" stroke-width=".9" stroke-opacity=".5"/>
+  <rect x="24" y="124" width="6" height="106" rx="3" fill="#D4AF37"/>
+  <text x="44" y="146" fill="#D4AF37" font-size="12" font-family="ui-monospace,monospace" font-weight="700">koi_cumulative.parquet</text>
+  <text x="376" y="146" text-anchor="end" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">3.32 MB</text>
+  <text x="44" y="168" fill="#E2E8F0" font-size="22" font-family="ui-monospace,monospace" font-weight="700">8,054 <tspan fill="#64748B" font-size="11">rows × 154 cols</tspan></text>
+  <text x="44" y="190" fill="#94A3B8" font-size="10" font-family="ui-monospace,monospace">▸ Kepler Objects of Interest (KOI)</text>
+  <text x="44" y="207" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">▸ Primary LightGBM training &amp; holdout set</text>
+</g>
 
-    <!-- TOI -->
-    <rect x="766" y="0" width="362" height="76" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-opacity="0.5"/>
-    <text x="782" y="24" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#DDD6FE">toi_catalog.parquet</text>
-    <text x="782" y="45" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">2,377 TESS Objects of Interest  •  55 columns</text>
-    <text x="782" y="63" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">FEDA domain adaptation &amp; active-learning candidate vetting</text>
-  </g>
+<!-- Card 2: PS -->
+<g opacity="0" style="animation:cardUp .5s .6s ease-out forwards">
+  <rect x="416" y="124" width="368" height="106" rx="8" fill="#081222" stroke="#A5F3FC" stroke-width=".9" stroke-opacity=".5"/>
+  <rect x="416" y="124" width="6" height="106" rx="3" fill="#A5F3FC"/>
+  <text x="436" y="146" fill="#A5F3FC" font-size="12" font-family="ui-monospace,monospace" font-weight="700">ps_confirmed_default.parquet</text>
+  <text x="768" y="146" text-anchor="end" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">1.91 MB</text>
+  <text x="436" y="168" fill="#E2E8F0" font-size="22" font-family="ui-monospace,monospace" font-weight="700">4,296 <tspan fill="#64748B" font-size="11">rows × 415 cols</tspan></text>
+  <text x="436" y="190" fill="#94A3B8" font-size="10" font-family="ui-monospace,monospace">▸ Confirmed Planetary Systems (NASA PS)</text>
+  <text x="436" y="207" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">▸ Mass-radius, HZ &amp; stellar host priors</text>
+</g>
 
-  <!-- SPHEREx 102-Channel Spectral Ruler -->
-  <g transform="translate(36, 224)">
-    <text x="0" y="14" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#E2E8F0">SPHEREx LVF 102-Channel Spectrophotometric Bandpass (0.75 µm → 5.00 µm)</text>
-    <rect x="0" y="24" width="1128" height="14" rx="7" fill="url(#specBar)"/>
-    <text x="0" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#93C5FD">0.75 µm (NIR)</text>
-    <text x="260" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#6EE7B7">1.40 µm (H₂O)</text>
-    <text x="530" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#FDE68A">2.30 µm (CO / CH₄)</text>
-    <text x="820" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#FDBA74">3.30 µm (PAH / Ice)</text>
-    <text x="1048" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#FCA5A5">5.00 µm (MIR)</text>
-  </g>
+<!-- Card 3: TOI -->
+<g opacity="0" style="animation:cardUp .5s .8s ease-out forwards">
+  <rect x="808" y="124" width="368" height="106" rx="8" fill="#081222" stroke="#C084FC" stroke-width=".9" stroke-opacity=".5"/>
+  <rect x="808" y="124" width="6" height="106" rx="3" fill="#C084FC"/>
+  <text x="828" y="146" fill="#C084FC" font-size="12" font-family="ui-monospace,monospace" font-weight="700">toi_catalog.parquet</text>
+  <text x="1160" y="146" text-anchor="end" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">0.60 MB</text>
+  <text x="828" y="168" fill="#E2E8F0" font-size="22" font-family="ui-monospace,monospace" font-weight="700">2,377 <tspan fill="#64748B" font-size="11">rows × 55 cols</tspan></text>
+  <text x="828" y="190" fill="#94A3B8" font-size="10" font-family="ui-monospace,monospace">▸ TESS Objects of Interest (TOI)</text>
+  <text x="828" y="207" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">▸ Cross-mission fine-tuning (v4 0.952)</text>
+</g>
+
+<!-- SPHEREx 102-CHANNEL SPECTRAL RULER -->
+<text x="24" y="256" fill="#94A3B8" font-size="10" font-family="ui-monospace,monospace" letter-spacing="1.5">SPHEREx 102-CHANNEL SPECTROPHOTOMETRIC SYNTHESIZER · 0.75 – 5.00 µm</text>
+<rect x="24" y="266" width="1152" height="18" rx="4" fill="url(#specGrad)" opacity=".85"/>
+<!-- Animated spectral scanner needle -->
+<rect x="24" y="263" width="4" height="24" rx="2" fill="#FFFFFF" opacity=".9" style="animation:scanSweep 5s ease-in-out infinite alternate"/>
+
+<!-- Wavelength ticks -->
+<g fill="#64748B" font-size="9" font-family="ui-monospace,monospace">
+  <text x="24" y="298">0.75 µm (Band 1)</text>
+  <text x="260" y="298" text-anchor="middle">1.11 µm (Band 2)</text>
+  <text x="510" y="298" text-anchor="middle">1.63 µm (Band 3)</text>
+  <text x="760" y="298" text-anchor="middle">2.42 µm (Band 4)</text>
+  <text x="980" y="298" text-anchor="middle">3.82 µm (Band 5)</text>
+  <text x="1176" y="298" text-anchor="end">5.00 µm (Band 6)</text>
+</g>
+
+<!-- FOOTER -->
+<rect x="0" y="308" width="1200" height="32" fill="#040A14"/>
+<line x1="0" y1="308" x2="1200" y2="308" stroke="#1E293B" stroke-width="1"/>
+<text x="600" y="328" text-anchor="middle" fill="#334155" font-size="10" font-family="ui-monospace,monospace" letter-spacing="2">ID CROSSWALK (KIC ↔ TIC ↔ Gaia DR3) · LEAK-FREE GROUPED SPLITTING · MANDEL-AGOL TRANSIT SYNTHESIS</text>
 </svg>

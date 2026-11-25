@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+<defs>
+  <style>
+    @keyframes panelIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes tagPulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+    @keyframes cardGlow { 0%,100%{filter:drop-shadow(0 0 6px #D4AF3730)} 50%{filter:drop-shadow(0 0 18px #D4AF3760)} }
+    @keyframes cardGlowB { 0%,100%{filter:drop-shadow(0 0 6px #A5F3FC30)} 50%{filter:drop-shadow(0 0 18px #A5F3FC60)} }
+    @keyframes shimmer { from{transform:translateX(-100%)} to{transform:translateX(300%)} }
+    @keyframes borderP { 0%,100%{opacity:.3} 50%{opacity:.7} }
+    @keyframes twinkle { 0%,100%{opacity:.2} 50%{opacity:.8} }
+  </style>
+</defs>
+
+<!-- BG -->
+<rect width="1200" height="300" fill="#040812"/>
+<rect x="1" y="1" width="1198" height="298" rx="8" fill="none" stroke="#D4AF37" stroke-width=".8" stroke-opacity=".25" style="animation:borderP 4s ease-in-out infinite"/>
+
+<!-- HEADER -->
+<rect width="1200" height="40" fill="#060E1A"/>
+<line x1="0" y1="40" x2="1200" y2="40" stroke="#1E293B" stroke-width="1"/>
+<text x="600" y="25" text-anchor="middle" fill="#94A3B8" font-size="11" font-family="ui-monospace,monospace" letter-spacing="3">VISUAL THEMES</text>
+
+<!-- DIVIDERS -->
+<line x1="300" y1="40" x2="300" y2="260" stroke="#1E293B" stroke-width="1"/>
+<line x1="600" y1="40" x2="600" y2="260" stroke="#1E293B" stroke-width="1"/>
+<line x1="900" y1="40" x2="900" y2="260" stroke="#1E293B" stroke-width="1"/>
+
+<!-- ===== THEME 1: URJA ⚡ (golden solar, light) ===== -->
+<g opacity="0" style="animation:panelIn .5s .2s ease-out forwards">
+  <!-- Light background panels -->
+  <rect x="10" y="50" width="280" height="200" rx="8" fill="#FAF8F5"/>
+  <!-- Mock nav bar -->
+  <rect x="10" y="50" width="280" height="28" rx="8" fill="#F0EAD6"/>
+  <circle cx="30" cy="64" r="6" fill="#C59B27" opacity=".8"/>
+  <circle cx="46" cy="64" r="4" fill="#C59B27" opacity=".5"/>
+  <text x="58" y="69" fill="#11162B" font-size="10" font-family="system-ui,sans-serif" font-weight="700">ASTRÆA</text>
+  <!-- Mock content -->
+  <rect x="20" y="88" width="100" height="8" rx="3" fill="#C59B27" opacity=".3"/>
+  <rect x="20" y="104" width="160" height="6" rx="3" fill="#11162B" opacity=".1"/>
+  <rect x="20" y="116" width="130" height="6" rx="3" fill="#11162B" opacity=".08"/>
+  <!-- Mock card -->
+  <rect x="20" y="130" width="260" height="80" rx="6" fill="#FFF" stroke="#C59B27" stroke-width="1" stroke-opacity=".4"/>
+  <rect x="28" y="140" width="40" height="40" rx="4" fill="#FAF0D2"/>
+  <rect x="78" y="143" width="80" height="8" rx="3" fill="#C59B27" opacity=".6"/>
+  <rect x="78" y="157" width="130" height="6" rx="3" fill="#11162B" opacity=".1"/>
+  <rect x="78" y="169" width="100" height="6" rx="3" fill="#11162B" opacity=".07"/>
+  <text x="28" y="161" fill="#C59B27" font-size="16" font-family="Georgia,serif">☀</text>
+  <!-- Label -->
+  <text x="150" y="225" text-anchor="middle" fill="#C59B27" font-size="13" font-family="system-ui,sans-serif" font-weight="700" style="animation:tagPulse 3s ease-in-out infinite">⚡ URJA</text>
+  <text x="150" y="241" text-anchor="middle" fill="#8B7355" font-size="9" font-family="ui-monospace,monospace">Golden Solar · Light</text>
+  <rect x="90" y="248" width="30" height="10" rx="2" fill="#FAF8F5" stroke="#11162B" stroke-width=".5"/>
+  <rect x="126" y="248" width="30" height="10" rx="2" fill="#C59B27"/>
+  <rect x="162" y="248" width="30" height="10" rx="2" fill="#11162B"/>
+</g>
+
+<!-- ===== THEME 2: JUNGO ✦ (deep void, dark) ===== -->
+<g opacity="0" style="animation:panelIn .5s .4s ease-out forwards">
+  <rect x="310" y="50" width="280" height="200" rx="8" fill="#090A0F"/>
+  <!-- Nav bar -->
+  <rect x="310" y="50" width="280" height="28" rx="8" fill="#0D0F18"/>
+  <circle cx="330" cy="64" r="6" fill="#D4AF37" opacity=".9" style="animation:twinkle 2s ease-in-out infinite"/>
+  <circle cx="346" cy="64" r="4" fill="#D4AF37" opacity=".5" style="animation:twinkle 2.5s ease-in-out infinite .3s"/>
+  <text x="358" y="69" fill="#D4AF37" font-size="10" font-family="system-ui,sans-serif" font-weight="700">ASTRÆA</text>
+  <!-- Stars -->
+  <circle cx="430" cy="90" r="1" fill="#E2E8F0" style="animation:twinkle 1.8s ease-in-out infinite .5s"/>
+  <circle cx="490" cy="75" r=".7" fill="#A5F3FC" style="animation:twinkle 2.2s ease-in-out infinite"/>
+  <circle cx="550" cy="95" r="1.2" fill="#D4AF37" style="animation:twinkle 1.5s ease-in-out infinite .8s"/>
+  <!-- Mock content -->
+  <rect x="320" y="88" width="100" height="8" rx="3" fill="#D4AF37" opacity=".3"/>
+  <rect x="320" y="104" width="160" height="6" rx="3" fill="#E2E8F0" opacity=".06"/>
+  <rect x="320" y="116" width="130" height="6" rx="3" fill="#E2E8F0" opacity=".04"/>
+  <!-- Mock card -->
+  <rect x="320" y="130" width="260" height="80" rx="6" fill="#0D1830" stroke="#D4AF37" stroke-width=".8" stroke-opacity=".4" style="animation:cardGlow 3s ease-in-out infinite .5s"/>
+  <rect x="328" y="140" width="40" height="40" rx="4" fill="#0A0F22"/>
+  <rect x="378" y="143" width="80" height="8" rx="3" fill="#D4AF37" opacity=".5"/>
+  <rect x="378" y="157" width="130" height="6" rx="3" fill="#A5F3FC" opacity=".15"/>
+  <rect x="378" y="169" width="100" height="6" rx="3" fill="#A5F3FC" opacity=".1"/>
+  <text x="328" y="162" fill="#D4AF37" font-size="16" font-family="Georgia,serif">✦</text>
+  <!-- Label -->
+  <text x="450" y="225" text-anchor="middle" fill="#D4AF37" font-size="13" font-family="system-ui,sans-serif" font-weight="700" style="animation:tagPulse 3s ease-in-out infinite .4s">✦ JUNGO</text>
+  <text x="450" y="241" text-anchor="middle" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Deep Void · Dark</text>
+  <rect x="390" y="248" width="30" height="10" rx="2" fill="#090A0F" stroke="#D4AF37" stroke-width=".5"/>
+  <rect x="426" y="248" width="30" height="10" rx="2" fill="#D4AF37"/>
+  <rect x="462" y="248" width="30" height="10" rx="2" fill="#A5F3FC"/>
+</g>
+
+<!-- ===== THEME 3: DARK 🌙 ===== -->
+<g opacity="0" style="animation:panelIn .5s .6s ease-out forwards">
+  <rect x="610" y="50" width="280" height="200" rx="8" fill="#0A0A0A"/>
+  <!-- Nav -->
+  <rect x="610" y="50" width="280" height="28" rx="8" fill="#141414"/>
+  <circle cx="630" cy="64" r="6" fill="#818CF8" opacity=".9"/>
+  <circle cx="646" cy="64" r="4" fill="#818CF8" opacity=".5"/>
+  <text x="658" y="69" fill="#E2E8F0" font-size="10" font-family="system-ui,sans-serif" font-weight="700">ASTRÆA</text>
+  <!-- Content -->
+  <rect x="620" y="88" width="100" height="8" rx="3" fill="#818CF8" opacity=".4"/>
+  <rect x="620" y="104" width="160" height="6" rx="3" fill="#E2E8F0" opacity=".07"/>
+  <rect x="620" y="116" width="130" height="6" rx="3" fill="#E2E8F0" opacity=".05"/>
+  <!-- Card -->
+  <rect x="620" y="130" width="260" height="80" rx="6" fill="#161616" stroke="#818CF8" stroke-width=".8" stroke-opacity=".3"/>
+  <rect x="628" y="140" width="40" height="40" rx="4" fill="#1A1A2E"/>
+  <rect x="678" y="143" width="80" height="8" rx="3" fill="#818CF8" opacity=".5"/>
+  <rect x="678" y="157" width="130" height="6" rx="3" fill="#E2E8F0" opacity=".1"/>
+  <rect x="678" y="169" width="100" height="6" rx="3" fill="#E2E8F0" opacity=".07"/>
+  <text x="628" y="162" fill="#818CF8" font-size="14">🌙</text>
+  <!-- Label -->
+  <text x="750" y="225" text-anchor="middle" fill="#818CF8" font-size="13" font-family="system-ui,sans-serif" font-weight="700" style="animation:tagPulse 3s ease-in-out infinite .8s">🌙 DARK</text>
+  <text x="750" y="241" text-anchor="middle" fill="#475569" font-size="9" font-family="ui-monospace,monospace">Obsidian High-Contrast</text>
+  <rect x="690" y="248" width="30" height="10" rx="2" fill="#0A0A0A" stroke="#818CF8" stroke-width=".5"/>
+  <rect x="726" y="248" width="30" height="10" rx="2" fill="#818CF8"/>
+  <rect x="762" y="248" width="30" height="10" rx="2" fill="#E2E8F0"/>
+</g>
+
+<!-- ===== THEME 4: LIGHT ☀️ ===== -->
+<g opacity="0" style="animation:panelIn .5s .8s ease-out forwards">
+  <rect x="910" y="50" width="280" height="200" rx="8" fill="#F8FAFC"/>
+  <!-- Nav -->
+  <rect x="910" y="50" width="280" height="28" rx="8" fill="#EFF6FF"/>
+  <circle cx="930" cy="64" r="6" fill="#3B82F6" opacity=".9"/>
+  <circle cx="946" cy="64" r="4" fill="#3B82F6" opacity=".5"/>
+  <text x="958" y="69" fill="#1E40AF" font-size="10" font-family="system-ui,sans-serif" font-weight="700">ASTRÆA</text>
+  <!-- Content -->
+  <rect x="920" y="88" width="100" height="8" rx="3" fill="#3B82F6" opacity=".25"/>
+  <rect x="920" y="104" width="160" height="6" rx="3" fill="#1E293B" opacity=".1"/>
+  <rect x="920" y="116" width="130" height="6" rx="3" fill="#1E293B" opacity=".07"/>
+  <!-- Card -->
+  <rect x="920" y="130" width="260" height="80" rx="6" fill="#FFF" stroke="#3B82F6" stroke-width=".8" stroke-opacity=".3"/>
+  <rect x="928" y="140" width="40" height="40" rx="4" fill="#EFF6FF"/>
+  <rect x="978" y="143" width="80" height="8" rx="3" fill="#3B82F6" opacity=".45"/>
+  <rect x="978" y="157" width="130" height="6" rx="3" fill="#1E293B" opacity=".1"/>
+  <rect x="978" y="169" width="100" height="6" rx="3" fill="#1E293B" opacity=".07"/>
+  <text x="928" y="162" fill="#3B82F6" font-size="14">☀️</text>
+  <!-- Label -->
+  <text x="1050" y="225" text-anchor="middle" fill="#3B82F6" font-size="13" font-family="system-ui,sans-serif" font-weight="700" style="animation:tagPulse 3s ease-in-out infinite 1.2s">☀️ LIGHT</text>
+  <text x="1050" y="241" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="ui-monospace,monospace">Starlight Marble</text>
+  <rect x="990" y="248" width="30" height="10" rx="2" fill="#F8FAFC" stroke="#3B82F6" stroke-width=".5"/>
+  <rect x="1026" y="248" width="30" height="10" rx="2" fill="#3B82F6"/>
+  <rect x="1062" y="248" width="30" height="10" rx="2" fill="#1E40AF"/>
+</g>
+
+<!-- FOOTER -->
+<rect x="0" y="260" width="1200" height="40" fill="#040A14"/>
+<line x1="0" y1="260" x2="1200" y2="260" stroke="#1E293B" stroke-width="1"/>
+<text x="600" y="284" text-anchor="middle" fill="#334155" font-size="10" font-family="ui-monospace,monospace" letter-spacing="2">TOGGLE THEMES VIA SETTINGS PAGE  ·  PERSISTED IN localStorage  ·  SYSTEM PREFERENCE DETECTED</text>
+</svg>

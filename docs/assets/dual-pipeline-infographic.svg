@@ -1,110 +1,168 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-label="Dual Scientific Pipelines: SPHEREx Sky Change and TESS Kepler Transit Vetting">
-  <defs>
-    <linearGradient id="dpBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070A14"/>
-      <stop offset="100%" stop-color="#11182C"/>
-    </linearGradient>
-    <marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8"/>
-    </marker>
-    <marker id="arrG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D4AF37"/>
-    </marker>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 500" width="1200" height="500">
+<defs>
+  <linearGradient id="dpbg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#07101E"/>
+    <stop offset="100%" stop-color="#040812"/>
+  </linearGradient>
+  <style>
+    @keyframes stepSlide { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes borderP { 0%,100%{opacity:.3} 50%{opacity:.7} }
+    @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+    @keyframes flowDash { from{stroke-dashoffset:24} to{stroke-dashoffset:0} }
+  </style>
+</defs>
 
-  <rect width="1200" height="480" rx="16" fill="url(#dpBg)" stroke="#334155" stroke-width="1.5"/>
+<rect width="1200" height="500" fill="url(#dpbg)"/>
+<rect x="1" y="1" width="1198" height="498" rx="8" fill="none" stroke="#A5F3FC" stroke-width=".8" stroke-opacity=".25" style="animation:borderP 4s ease-in-out infinite"/>
 
-  <text x="36" y="40" font-family="system-ui, sans-serif" font-size="19" font-weight="700" fill="#F8FAFC">Dual Scientific Architecture: Project A &amp; Project B</text>
-  <text x="36" y="60" font-family="ui-monospace, monospace" font-size="12" fill="#94A3B8">Two Specialized Astrophysics Engines Unified Under One Observatory Interface</text>
+<!-- HEADER -->
+<rect width="1200" height="52" fill="#060F1C"/>
+<line x1="0" y1="52" x2="1200" y2="52" stroke="#A5F3FC" stroke-width=".5" stroke-opacity=".25"/>
+<text x="600" y="22" text-anchor="middle" fill="#A5F3FC" font-size="11" font-family="ui-monospace,monospace" letter-spacing="2">DUAL SCIENTIFIC PIPELINES</text>
+<text x="600" y="40" text-anchor="middle" fill="#475569" font-size="10" font-family="ui-monospace,monospace">Project A (SPHEREx Sky Change Explorer)  ⚡  Project B (Exoplanet Habitability &amp; ML Vetting)</text>
 
-  <!-- LEFT PANEL: PROJECT A -->
-  <g transform="translate(36, 84)">
-    <rect x="0" y="0" width="548" height="364" rx="14" fill="#0D1426" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.5"/>
-    <rect x="0" y="0" width="548" height="44" rx="14" fill="#0C4A6E" fill-opacity="0.55"/>
-    <text x="20" y="28" font-family="ui-monospace, monospace" font-size="14" font-weight="700" fill="#A5F3FC">PIPELINE A // SPHEREx SKY CHANGE ENGINE</text>
+<!-- CENTER DIVIDER -->
+<line x1="600" y1="52" x2="600" y2="462" stroke="#1E293B" stroke-width="1.5" stroke-dasharray="6 4"/>
 
-    <!-- Step 1 -->
-    <rect x="20" y="62" width="240" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-opacity="0.4"/>
-    <text x="32" y="84" font-family="system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#E0F2FE">1. 102-Channel SED Synthesis</text>
-    <text x="32" y="103" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">Planck blackbody conditioned on T_eff</text>
-    <text x="32" y="119" font-family="system-ui, sans-serif" font-size="11" fill="#38BDF8">0.75–5.00 µm LVF + H₂O/CH₄/CO bands</text>
+<!-- ===== LEFT: PROJECT A ===== -->
+<rect x="20" y="66" width="560" height="36" rx="6" fill="#0E3A5C" opacity=".45" stroke="#A5F3FC" stroke-width=".8" stroke-opacity=".4"/>
+<text x="300" y="89" text-anchor="middle" fill="#A5F3FC" font-size="12" font-family="ui-monospace,monospace" font-weight="700" letter-spacing="1.5">PROJECT A · SPHEREx SKY CHANGE EXPLORER</text>
 
-    <line x1="260" y1="96" x2="286" y2="96" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrB)"/>
+<!-- Step A1 -->
+<g opacity="0" style="animation:stepSlide .45s .2s ease-out forwards">
+  <rect x="28" y="118" width="544" height="66" rx="6" fill="#081426" stroke="#38BDF8" stroke-width=".8" stroke-opacity=".45"/>
+  <circle cx="54" cy="151" r="14" fill="#0E3A5C" stroke="#A5F3FC" stroke-width="1"/>
+  <text x="54" y="155" text-anchor="middle" fill="#A5F3FC" font-size="12" font-family="ui-monospace,monospace" font-weight="700">1</text>
+  <text x="80" y="142" fill="#E2E8F0" font-size="12" font-family="system-ui,sans-serif" font-weight="600">NEOWISE &amp; Multi-Epoch Crosswalk</text>
+  <text x="80" y="160" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">Ingest 102-channel SEDs (0.75–5.00 µm) + moving object quarantine</text>
+</g>
 
-    <!-- Step 2 -->
-    <rect x="290" y="62" width="238" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-opacity="0.4"/>
-    <text x="302" y="84" font-family="system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#E0F2FE">2. Spectral Typing &amp; NEOWISE</text>
-    <text x="302" y="103" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">OBAFGKM spectral classification</text>
-    <text x="302" y="119" font-family="system-ui, sans-serif" font-size="11" fill="#38BDF8">IR cross-match &amp; epoch variability</text>
+<!-- Connector A1 -> A2 -->
+<line x1="300" y1="184" x2="300" y2="206" stroke="#A5F3FC" stroke-width="1.5" stroke-dasharray="4 3" style="animation:flowDash 1s linear infinite"/>
+<circle r="3.5" fill="#A5F3FC">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M300,184 L300,206"/>
+</circle>
 
-    <!-- Down Arrow -->
-    <line x1="409" y1="130" x2="409" y2="156" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrB)"/>
+<!-- Step A2 -->
+<g opacity="0" style="animation:stepSlide .45s .45s ease-out forwards">
+  <rect x="28" y="206" width="544" height="66" rx="6" fill="#081426" stroke="#38BDF8" stroke-width=".8" stroke-opacity=".45"/>
+  <circle cx="54" cy="239" r="14" fill="#0E3A5C" stroke="#A5F3FC" stroke-width="1"/>
+  <text x="54" y="243" text-anchor="middle" fill="#A5F3FC" font-size="12" font-family="ui-monospace,monospace" font-weight="700">2</text>
+  <text x="80" y="230" fill="#E2E8F0" font-size="12" font-family="system-ui,sans-serif" font-weight="600">Variability &amp; Spectral Typing</text>
+  <text x="80" y="248" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">Detect FUor outbursts, dippers, YSOs &amp; IR excess templates</text>
+</g>
 
-    <!-- Step 3 -->
-    <rect x="290" y="160" width="238" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-opacity="0.4"/>
-    <text x="302" y="182" font-family="system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#E0F2FE">3. Anomaly &amp; Moving Objects</text>
-    <text x="302" y="201" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">FU Orionis / YSO outburst detection</text>
-    <text x="302" y="217" font-family="system-ui, sans-serif" font-size="11" fill="#38BDF8">Asteroid / transient tracklet filter</text>
+<!-- Connector A2 -> A3 -->
+<line x1="300" y1="272" x2="300" y2="294" stroke="#A5F3FC" stroke-width="1.5" stroke-dasharray="4 3" style="animation:flowDash 1s linear infinite .3s"/>
+<circle r="3.5" fill="#A5F3FC">
+  <animateMotion dur="1.5s" repeatCount="indefinite" begin=".4s" path="M300,272 L300,294"/>
+</circle>
 
-    <!-- Left Arrow -->
-    <line x1="290" y1="194" x2="264" y2="194" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrB)"/>
+<!-- Step A3 -->
+<g opacity="0" style="animation:stepSlide .45s .7s ease-out forwards">
+  <rect x="28" y="294" width="544" height="66" rx="6" fill="#081426" stroke="#38BDF8" stroke-width=".8" stroke-opacity=".45"/>
+  <circle cx="54" cy="327" r="14" fill="#0E3A5C" stroke="#A5F3FC" stroke-width="1"/>
+  <text x="54" y="331" text-anchor="middle" fill="#A5F3FC" font-size="12" font-family="ui-monospace,monospace" font-weight="700">3</text>
+  <text x="80" y="318" fill="#E2E8F0" font-size="12" font-family="system-ui,sans-serif" font-weight="600">Anomaly Scoring &amp; Injection Recovery</text>
+  <text x="80" y="336" fill="#64748B" font-size="10" font-family="ui-monospace,monospace">Isolation Forest / Mahalanobis outlier rank + synthetic recovery test</text>
+</g>
 
-    <!-- Step 4 -->
-    <rect x="20" y="160" width="240" height="68" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-opacity="0.4"/>
-    <text x="32" y="182" font-family="system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#E0F2FE">4. Quarantine &amp; Ranking</text>
-    <text x="32" y="201" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8">Injection-recovery completeness check</text>
-    <text x="32" y="217" font-family="system-ui, sans-serif" font-size="11" fill="#38BDF8">SHAP anomaly attribution &amp; alert rank</text>
+<!-- Connector A3 -> A4 -->
+<line x1="300" y1="360" x2="300" y2="382" stroke="#A5F3FC" stroke-width="1.5" stroke-dasharray="4 3" style="animation:flowDash 1s linear infinite .6s"/>
+<circle r="3.5" fill="#A5F3FC">
+  <animateMotion dur="1.5s" repeatCount="indefinite" begin=".8s" path="M300,360 L300,382"/>
+</circle>
 
-    <!-- Output Summary Box -->
-    <rect x="20" y="250" width="508" height="94" rx="10" fill="#090D1A" stroke="#38BDF8" stroke-opacity="0.3"/>
-    <text x="36" y="274" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#A5F3FC">KEY MODULES (astro/src/project_a/)</text>
-    <text x="36" y="296" font-family="ui-monospace, monospace" font-size="11" fill="#CBD5E1">pipeline.py  •  spectral_typing.py  •  variability.py  •  anomaly.py</text>
-    <text x="36" y="316" font-family="ui-monospace, monospace" font-size="11" fill="#CBD5E1">moving_objects.py  •  neowise.py  •  quarantine.py  •  injection_recovery.py</text>
-    <text x="36" y="334" font-family="system-ui, sans-serif" font-size="10.5" fill="#64748B">Featured Demo Targets: DEMO-FUOR-01, DEMO-ANOMALY-01</text>
-  </g>
+<!-- Step A4 -->
+<g opacity="0" style="animation:stepSlide .45s .95s ease-out forwards">
+  <rect x="28" y="382" width="544" height="66" rx="6" fill="#062238" stroke="#34D399" stroke-width=".9" stroke-opacity=".5"/>
+  <circle cx="54" cy="415" r="14" fill="#064E3B" stroke="#34D399" stroke-width="1"/>
+  <text x="54" y="419" text-anchor="middle" fill="#34D399" font-size="12" font-family="ui-monospace,monospace" font-weight="700">4</text>
+  <text x="80" y="406" fill="#34D399" font-size="12" font-family="system-ui,sans-serif" font-weight="600">SHAP Ranker &amp; Transient Triage Queue</text>
+  <text x="80" y="424" fill="#94A3B8" font-size="10" font-family="ui-monospace,monospace">Outputs ranked alert list (e.g. DEMO-FUOR-01, DEMO-ANOMALY-01)</text>
+</g>
 
-  <!-- RIGHT PANEL: PROJECT B -->
-  <g transform="translate(616, 84)">
-    <rect x="0" y="0" width="548" height="364" rx="14" fill="#0D1426" stroke="#D4AF37" stroke-opacity="0.55" stroke-width="1.5"/>
-    <rect x="0" y="0" width="548" height="44" rx="14" fill="#78350F" fill-opacity="0.5"/>
-    <text x="20" y="28" font-family="ui-monospace, monospace" font-size="14" font-weight="700" fill="#FDE68A">PIPELINE B // TRANSIT VETTING &amp; HABITABILITY</text>
+<!-- ===== RIGHT: PROJECT B ===== -->
+<rect x="620" y="66" width="560" height="36" rx="6" fill="#422006" opacity=".5" stroke="#D4AF37" stroke-width=".8" stroke-opacity=".5"/>
+<text x="900" y="89" text-anchor="middle" fill="#D4AF37" font-size="12" font-family="ui-monospace,monospace" font-weight="700" letter-spacing="1.5">PROJECT B · EXOPLANET PHYSICS &amp; ML VETTING</text>
 
-    <!-- B1 Sub-pipeline -->
-    <rect x="20" y="62" width="508" height="128" rx="10" fill="#1E293B" stroke="#D4AF37" stroke-opacity="0.45"/>
-    <text x="36" y="84" font-family="ui-monospace, monospace" font-size="12.5" font-weight="700" fill="#FDE68A">B1 // MONTE CARLO PHYSICS &amp; HABITABILITY (astro_bridge.py)</text>
+<!-- B1 Physics Column -->
+<text x="755" y="118" text-anchor="middle" fill="#FCD34D" font-size="10" font-family="ui-monospace,monospace" letter-spacing="1">B1 · ASTROPHYSICS ENGINE</text>
 
-    <rect x="36" y="96" width="110" height="44" rx="6" fill="#0F172A" stroke="#D4AF37" stroke-opacity="0.4"/>
-    <text x="46" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#F8FAFC">MC Sampler</text>
-    <text x="46" y="131" font-family="ui-monospace, monospace" font-size="10" fill="#94A3B8">N-draw posteriors</text>
+<g opacity="0" style="animation:stepSlide .45s .3s ease-out forwards">
+  <rect x="624" y="128" width="262" height="72" rx="6" fill="#0A1222" stroke="#D4AF37" stroke-width=".8" stroke-opacity=".45"/>
+  <text x="638" y="148" fill="#D4AF37" font-size="11" font-family="ui-monospace,monospace" font-weight="700">Monte Carlo Sampler</text>
+  <text x="638" y="166" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">N-sample uncertainty propagation</text>
+  <text x="638" y="182" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Stellar Teff, R*, log(g), Period</text>
+</g>
 
-    <line x1="146" y1="118" x2="162" y2="118" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrG)"/>
+<line x1="755" y1="200" x2="755" y2="220" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 3" style="animation:flowDash 1s linear infinite"/>
+<circle r="3.5" fill="#D4AF37">
+  <animateMotion dur="1.5s" repeatCount="indefinite" path="M755,200 L755,220"/>
+</circle>
 
-    <rect x="166" y="96" width="110" height="44" rx="6" fill="#0F172A" stroke="#D4AF37" stroke-opacity="0.4"/>
-    <text x="176" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#F8FAFC">Forecaster</text>
-    <text x="176" y="131" font-family="ui-monospace, monospace" font-size="10" fill="#94A3B8">Chen-Kipping M-R</text>
+<g opacity="0" style="animation:stepSlide .45s .55s ease-out forwards">
+  <rect x="624" y="220" width="262" height="72" rx="6" fill="#0A1222" stroke="#D4AF37" stroke-width=".8" stroke-opacity=".45"/>
+  <text x="638" y="240" fill="#D4AF37" font-size="11" font-family="ui-monospace,monospace" font-weight="700">Chen-Kipping Forecaster</text>
+  <text x="638" y="258" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Mass-radius probabilistic M(R)</text>
+  <text x="638" y="274" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Rocky / Sub-Neptune / Gas regime</text>
+</g>
 
-    <line x1="276" y1="118" x2="292" y2="118" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrG)"/>
+<line x1="755" y1="292" x2="755" y2="312" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 3" style="animation:flowDash 1s linear infinite .4s"/>
+<circle r="3.5" fill="#D4AF37">
+  <animateMotion dur="1.5s" repeatCount="indefinite" begin=".5s" path="M755,292 L755,312"/>
+</circle>
 
-    <rect x="296" y="96" width="106" height="44" rx="6" fill="#0F172A" stroke="#D4AF37" stroke-opacity="0.4"/>
-    <text x="306" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#F8FAFC">Kopparapu HZ</text>
-    <text x="306" y="131" font-family="ui-monospace, monospace" font-size="10" fill="#94A3B8">Conservative/Opt</text>
+<g opacity="0" style="animation:stepSlide .45s .8s ease-out forwards">
+  <rect x="624" y="312" width="262" height="72" rx="6" fill="#0A1222" stroke="#D4AF37" stroke-width=".8" stroke-opacity=".45"/>
+  <text x="638" y="332" fill="#D4AF37" font-size="11" font-family="ui-monospace,monospace" font-weight="700">Kopparapu HZ &amp; Priority</text>
+  <text x="638" y="350" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Conservative &amp; Optimistic HZ</text>
+  <text x="638" y="366" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Insolation S_eff &amp; T_eq (K)</text>
+</g>
 
-    <line x1="402" y1="118" x2="418" y2="118" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arrG)"/>
+<!-- B2 ML Column -->
+<text x="1045" y="118" text-anchor="middle" fill="#C084FC" font-size="10" font-family="ui-monospace,monospace" letter-spacing="1">B2 · ML VETTING</text>
 
-    <rect x="422" y="96" width="90" height="44" rx="6" fill="#0F172A" stroke="#D4AF37" stroke-opacity="0.4"/>
-    <text x="430" y="115" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#F8FAFC">TSM / ESM</text>
-    <text x="430" y="131" font-family="ui-monospace, monospace" font-size="10" fill="#94A3B8">JWST Priority</text>
+<g opacity="0" style="animation:stepSlide .45s .4s ease-out forwards">
+  <rect x="914" y="128" width="262" height="72" rx="6" fill="#0A1222" stroke="#C084FC" stroke-width=".8" stroke-opacity=".45"/>
+  <text x="928" y="148" fill="#C084FC" font-size="11" font-family="ui-monospace,monospace" font-weight="700">LightGBM 8-Feature Core</text>
+  <text x="928" y="166" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Leak-free KOI model (AUC 0.977)</text>
+  <text x="928" y="182" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">TESS v4 fine-tuned (AUC 0.952)</text>
+</g>
 
-    <text x="36" y="172" font-family="system-ui, sans-serif" font-size="11" fill="#CBD5E1">Explicit assumption flags: mass_derived_from_radius, ecc_assumed_zero, T2 composition class</text>
+<line x1="1045" y1="200" x2="1045" y2="220" stroke="#C084FC" stroke-width="1.5" stroke-dasharray="4 3" style="animation:flowDash 1s linear infinite"/>
+<circle r="3.5" fill="#C084FC">
+  <animateMotion dur="1.5s" repeatCount="indefinite" begin=".2s" path="M1045,200 L1045,220"/>
+</circle>
 
-    <!-- B2 Sub-pipeline -->
-    <rect x="20" y="206" width="508" height="138" rx="10" fill="#1E293B" stroke="#10B981" stroke-opacity="0.45"/>
-    <text x="36" y="228" font-family="ui-monospace, monospace" font-size="12.5" font-weight="700" fill="#6EE7B7">B2 // LEAK-FREE ML VETTING &amp; CONFORMAL TRIAGE</text>
+<g opacity="0" style="animation:stepSlide .45s .65s ease-out forwards">
+  <rect x="914" y="220" width="262" height="72" rx="6" fill="#0A1222" stroke="#C084FC" stroke-width=".8" stroke-opacity=".45"/>
+  <text x="928" y="240" fill="#C084FC" font-size="11" font-family="ui-monospace,monospace" font-weight="700">TreeSHAP Explainability</text>
+  <text x="928" y="258" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Exact per-target waterfall drivers</text>
+  <text x="928" y="274" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Base value + Δ contributions</text>
+</g>
 
-    <text x="36" y="252" font-family="system-ui, sans-serif" font-size="11.5" fill="#E2E8F0">• Mandel-Agol 150-point limb-darkened transit light curves + observational scatter</text>
-    <text x="36" y="272" font-family="system-ui, sans-serif" font-size="11.5" fill="#E2E8F0">• LightGBM (0.977 ROC-AUC) on 8 physical observables (disjoint kepid split)</text>
-    <text x="36" y="292" font-family="system-ui, sans-serif" font-size="11.5" fill="#E2E8F0">• Exact TreeSHAP (pred_contrib=True) + Split Conformal Uncertainty Bounds</text>
-    <text x="36" y="312" font-family="system-ui, sans-serif" font-size="11.5" fill="#FDE68A">• Difference-Image Centroid Tripwire (&gt;3σ) → Human Active-Learning Queue</text>
-    <text x="36" y="331" font-family="ui-monospace, monospace" font-size="10.5" fill="#64748B">Featured Targets: TOI-700.02, TOI-1452.01, KOI-00351.01</text>
-  </g>
+<line x1="1045" y1="292" x2="1045" y2="312" stroke="#C084FC" stroke-width="1.5" stroke-dasharray="4 3" style="animation:flowDash 1s linear infinite .4s"/>
+<circle r="3.5" fill="#C084FC">
+  <animateMotion dur="1.5s" repeatCount="indefinite" begin=".7s" path="M1045,292 L1045,312"/>
+</circle>
+
+<g opacity="0" style="animation:stepSlide .45s .9s ease-out forwards">
+  <rect x="914" y="312" width="262" height="72" rx="6" fill="#0A1222" stroke="#C084FC" stroke-width=".8" stroke-opacity=".45"/>
+  <text x="928" y="332" fill="#C084FC" font-size="11" font-family="ui-monospace,monospace" font-weight="700">Centroid &amp; Transit Tripwire</text>
+  <text x="928" y="350" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Odd/even depth &amp; centroid offset</text>
+  <text x="928" y="366" fill="#64748B" font-size="9" font-family="ui-monospace,monospace">Mandel-Agol curve verification</text>
+</g>
+
+<!-- Unified Triage Output -->
+<g opacity="0" style="animation:stepSlide .45s 1.1s ease-out forwards">
+  <rect x="624" y="400" width="552" height="48" rx="6" fill="#062238" stroke="#34D399" stroke-width=".9" stroke-opacity=".5"/>
+  <text x="900" y="421" text-anchor="middle" fill="#34D399" font-size="11" font-family="ui-monospace,monospace" font-weight="700">UNIFIED SQLITE TRIAGE &amp; SSE BATCH STREAM</text>
+  <text x="900" y="437" text-anchor="middle" fill="#94A3B8" font-size="9.5" font-family="ui-monospace,monospace">Featured: TOI-700.02 · TOI-1452.01 · KOI-00351.01</text>
+</g>
+
+<!-- FOOTER -->
+<rect x="0" y="464" width="1200" height="36" fill="#040A14"/>
+<line x1="0" y1="464" x2="1200" y2="464" stroke="#1E293B" stroke-width="1"/>
+<text x="600" y="486" text-anchor="middle" fill="#334155" font-size="10" font-family="ui-monospace,monospace" letter-spacing="2">END-TO-END SCIENTIFIC PIPELINE · ZERO TARGET LEAKAGE · REAL-TIME SSE STREAMING</text>
 </svg>
