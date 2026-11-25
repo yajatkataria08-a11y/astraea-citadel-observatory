@@ -33,7 +33,8 @@
   <a href="#ai-vetting--shap-explainability">ML &amp; SHAP</a> •
   <a href="#api-reference">API</a> •
   <a href="#visual-themes">Themes</a> •
-  <a href="#testing">Testing</a>
+  <a href="#testing">Testing</a> •
+  <a href="#references-research-papers--datasets">References</a>
 </p>
 
 </div>
@@ -305,6 +306,121 @@ ASTRAEA2/
 ├── pipeline.md               # Detailed scientific pipeline specification
 ├── start-backend.bat/.sh     # One-click backend launchers
 └── start-frontend.bat/.sh    # One-click frontend launchers
+```
+
+</details>
+
+---
+
+## References, Research Papers & Datasets
+
+### Project Technical Report & Specification
+- 📄 [**Sky Change Explorer and Exoplanet Habitability Quick-Look.pdf**](Sky%20Change%20Explorer%20and%20Exoplanet%20Habitability%20Quick-Look.pdf) — Bundled project design & quick-look paper covering Project A (SPHEREx sky-change explorer) and Project B (habitability & vetting).
+- 📘 [**pipeline.md**](pipeline.md) / [**pipeline_rev5.md**](pipeline_rev5.md) — End-to-end scientific architecture and verification notes.
+
+### Astronomical Datasets Used (`astro/data/raw/`)
+
+All catalog tables are stored as columnar Parquet files (`14,727` total rows, ingested `2026-11-10T19:48:03Z` per [`snapshot_metadata.json`](astro/data/raw/snapshot_metadata.json)) sourced from the **NASA Exoplanet Archive** and verified research mirrors:
+
+| Dataset | File | Rows × Cols | Primary Reference |
+| :--- | :--- | ---: | :--- |
+| **Kepler DR25 KOI Cumulative** | [`koi_cumulative.parquet`](astro/data/raw/koi_cumulative.parquet) | 8,054 × 154 | Thompson et al. (2018), *ApJS*, 235(2), 38 |
+| **NASA Confirmed Planets (PS)** | [`ps_confirmed_default.parquet`](astro/data/raw/ps_confirmed_default.parquet) | 4,296 × 415 | Akeson et al. (2013), *PASP*, 125(930), 989 |
+| **TESS Objects of Interest (TOI)** | [`toi_catalog.parquet`](astro/data/raw/toi_catalog.parquet) | 2,377 × 55 | Ricker et al. (2015), *JATIS*, 1(1), 014003 |
+
+### Foundational Research Papers & Methods
+
+| Work | Role in ASTRÆA | Citation |
+| :--- | :--- | :--- |
+| **Kepler DR25 Catalog** | Primary KOI training & hold-out dataset | Thompson, S. E., et al. (2018). *Planetary Candidates Observed by Kepler. VIII. A Fully Automated Catalog with Measured Completeness and Reliability Based on Data Release 25*. ApJS, 235(2), 38. |
+| **TESS Mission** | Cross-mission TOI catalog & fine-tuning target set | Ricker, G. R., et al. (2015). *Transiting Exoplanet Survey Satellite (TESS)*. JATIS, 1(1), 014003. |
+| **NASA Exoplanet Archive** | Archive hosting KOI, PS, and TOI tables | Akeson, R. L., et al. (2013). *The NASA Exoplanet Archive: Data and Tools for Exoplanet Research*. PASP, 125(930), 989. |
+| **LightGBM** | Gradient-boosted decision tree classifier behind vetting | Ke, G., et al. (2017). *LightGBM: A Highly Efficient Gradient Boosting Decision Tree*. NeurIPS 30, 3146–3154. |
+| **TreeSHAP** | Exact local & global feature attribution waterfall | Lundberg, S. M., et al. (2020). *From local explanations to global understanding with explainable AI for trees*. Nature Machine Intelligence, 2(1), 56–67. |
+| **Habitable Zone Boundaries** | Conservative & optimistic HZ insolation limits (`B1`) | Kopparapu, R. K., et al. (2013). *Habitable Zones around Main-Sequence Stars: New Estimates*. ApJ, 765(2), 131. |
+| **Probabilistic Mass–Radius** | Mass forecasting from planet radius (`B1`) | Chen, J., & Kipping, D. (2017). *Probabilistic Forecasting of the Masses and Radii of Other Worlds*. ApJ, 834(1), 17. |
+| **Split Conformal Prediction** | Finite-sample uncertainty & triage abstain bands | Angelopoulos, A. N., & Bates, S. (2021). *A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification*. arXiv:2107.07511. |
+| **SPHEREx Survey** | Background architecture for 102-ch IR sky-change (`Project A`) | Doré, O., et al. (2018). *Science Impacts of the SPHEREx All-Sky Optical to Near-Infrared Spectral Survey II*. arXiv:1805.05489. |
+| **ExoMiner** | External deep-learning vetting benchmark reference | Valizadegan, H., et al. (2022). *ExoMiner: A Highly Accurate and Explainable Deep Learning Classifier to Mine Exoplanets*. ApJ, 926(2), 120. |
+
+<details>
+<summary><b>BibTeX Citations (click to expand)</b></summary>
+
+```bibtex
+@misc{astraea2026,
+  title={{ASTR{\AE}A Observatory}: exoplanet candidate vetting console},
+  author={{Team BroCode}},
+  howpublished={Software, VIT Bhopal University},
+  year={2026}
+}
+
+@article{thompson2018,
+  title={Planetary Candidates Observed by Kepler. VIII. A Fully Automated Catalog with Measured Completeness and Reliability Based on Data Release 25},
+  author={Thompson, Susan E. and Coughlin, Jeffrey L. and Hoffman, Kelsey and others},
+  journal={The Astrophysical Journal Supplement Series},
+  volume={235}, number={2}, pages={38}, year={2018}
+}
+
+@article{ricker2015,
+  title={Transiting Exoplanet Survey Satellite (TESS)},
+  author={Ricker, George R. and Winn, Joshua N. and Vanderspek, Roland and others},
+  journal={Journal of Astronomical Telescopes, Instruments, and Systems},
+  volume={1}, number={1}, pages={014003}, year={2015}
+}
+
+@article{akeson2013,
+  title={The NASA Exoplanet Archive: Data and Tools for Exoplanet Research},
+  author={Akeson, Rachel L. and Chen, Xi and Ciardi, David and others},
+  journal={Publications of the Astronomical Society of the Pacific},
+  volume={125}, number={930}, pages={989}, year={2013}
+}
+
+@inproceedings{ke2017lightgbm,
+  title={LightGBM: A Highly Efficient Gradient Boosting Decision Tree},
+  author={Ke, Guolin and Meng, Qi and Finley, Thomas and others},
+  booktitle={Advances in Neural Information Processing Systems 30},
+  pages={3146--3154}, year={2017}
+}
+
+@article{lundberg2020,
+  title={From local explanations to global understanding with explainable {AI} for trees},
+  author={Lundberg, Scott M. and Erion, Gabriel and Chen, Hugh and others},
+  journal={Nature Machine Intelligence},
+  volume={2}, number={1}, pages={56--67}, year={2020}
+}
+
+@article{kopparapu2013,
+  title={Habitable Zones around Main-Sequence Stars: New Estimates},
+  author={Kopparapu, Ravi Kumar and Ramirez, Ramses and Kasting, James F. and others},
+  journal={The Astrophysical Journal},
+  volume={765}, number={2}, pages={131}, year={2013}
+}
+
+@article{chen2017,
+  title={Probabilistic Forecasting of the Masses and Radii of Other Worlds},
+  author={Chen, Jingjing and Kipping, David},
+  journal={The Astrophysical Journal},
+  volume={834}, number={1}, pages={17}, year={2017}
+}
+
+@article{angelopoulos2021gentle,
+  title={A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification},
+  author={Angelopoulos, Anastasios N. and Bates, Stephen},
+  journal={arXiv preprint arXiv:2107.07511}, year={2021}
+}
+
+@article{dore2018spherex,
+  title={Science Impacts of the SPHEREx All-Sky Optical to Near-Infrared Spectral Survey II},
+  author={Dor{\'e}, Olivier and others},
+  journal={arXiv preprint arXiv:1805.05489}, year={2018}
+}
+
+@article{valizadegan2022,
+  title={ExoMiner: A Highly Accurate and Explainable Deep Learning Classifier to Mine Exoplanets},
+  author={Valizadegan, Hamed and Martinho, Miguel J. S. and Wilkens, Laurent S. and others},
+  journal={The Astrophysical Journal},
+  volume={926}, number={2}, pages={120}, year={2022}
+}
 ```
 
 </details>
