@@ -1,0 +1,27 @@
+{
+  "version": "v2_phase1",
+  "base_model_name": "blend_ensemble",
+  "use_feda": true,
+  "decision_threshold": 0.4,
+  "tess_weight_factor": 6.0,
+  "seed": 42,
+  "metrics": {
+    "accuracy": 0.9021739130434783,
+    "roc_auc": 0.9504310344827587,
+    "pr_auc": 0.9031564362871654,
+    "precision": 0.9032258064516129,
+    "recall": 0.8235294117647058,
+    "f1": 0.8615384615384616
+  },
+  "zero_shot_metrics": {
+    "accuracy": 0.6956521739130435,
+    "roc_auc": 0.7446754563894524,
+    "pr_auc": 0.6179325748682382,
+    "precision": 0.6666666666666666,
+    "recall": 0.35294117647058826,
+    "f1": 0.46153846153846156
+  },
+  "n_kepler_train": 6268,
+  "n_tess_train": 722,
+  "n_tess_test": 184
+}

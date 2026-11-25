@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="NASA Astronomical Dataset Breakdown and SPHEREx Band Coverage">
+  <defs>
+    <linearGradient id="dsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D1A"/>
+      <stop offset="100%" stop-color="#11182E"/>
+    </linearGradient>
+    <linearGradient id="specBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="28%" stop-color="#34D399"/>
+      <stop offset="55%" stop-color="#FBBF24"/>
+      <stop offset="80%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="300" rx="16" fill="url(#dsBg)" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <text x="36" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#F8FAFC">NASA Exoplanet Archive Parquet Mirror &amp; SPHEREx Spectral Coverage</text>
+  <text x="36" y="60" font-family="ui-monospace, monospace" font-size="12" fill="#94A3B8">14,727 Total Real Catalog Rows (astro/data/raw/*.parquet)  •  Zero Synthetic Label Leakage</text>
+
+  <!-- Proportional Bar Chart (Total = 14,727) -->
+  <!-- KOI: 8,054 (54.7%) | PS: 4,296 (29.2%) | TOI: 2,377 (16.1%) -->
+  <g transform="translate(36, 82)">
+    <rect x="0" y="0" width="617" height="28" rx="6" fill="#3B82F6"/>
+    <text x="14" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#FFFFFF">KOI Cumulative: 8,054 (54.7%)</text>
+
+    <rect x="623" y="0" width="329" height="28" rx="6" fill="#D4AF37"/>
+    <text x="635" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#090A0F">Confirmed PS: 4,296 (29.2%)</text>
+
+    <rect x="958" y="0" width="170" height="28" rx="6" fill="#8B5CF6"/>
+    <text x="968" y="18" font-family="ui-monospace, monospace" font-size="12" font-weight="700" fill="#FFFFFF">TOI: 2,377 (16.1%)</text>
+  </g>
+
+  <!-- 3 Dataset Detail Cards -->
+  <g transform="translate(36, 128)">
+    <!-- KOI -->
+    <rect x="0" y="0" width="362" height="76" rx="10" fill="#0F172A" stroke="#3B82F6" stroke-opacity="0.5"/>
+    <text x="16" y="24" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#93C5FD">koi_cumulative.parquet</text>
+    <text x="16" y="45" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">8,054 Kepler Objects of Interest  •  154 columns</text>
+    <text x="16" y="63" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">Group-disjoint kepid split for LightGBM CONFIRMED vs FP</text>
+
+    <!-- PS -->
+    <rect x="383" y="0" width="362" height="76" rx="10" fill="#0F172A" stroke="#D4AF37" stroke-opacity="0.5"/>
+    <text x="399" y="24" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#FDE68A">ps_confirmed_default.parquet</text>
+    <text x="399" y="45" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">4,296 Confirmed Exoplanets  •  415 columns</text>
+    <text x="399" y="63" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">B1 Monte Carlo physics, HZ bounds, TSM/ESM follow-up rank</text>
+
+    <!-- TOI -->
+    <rect x="766" y="0" width="362" height="76" rx="10" fill="#0F172A" stroke="#8B5CF6" stroke-opacity="0.5"/>
+    <text x="782" y="24" font-family="ui-monospace, monospace" font-size="13" font-weight="700" fill="#DDD6FE">toi_catalog.parquet</text>
+    <text x="782" y="45" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">2,377 TESS Objects of Interest  •  55 columns</text>
+    <text x="782" y="63" font-family="system-ui, sans-serif" font-size="11" fill="#64748B">FEDA domain adaptation &amp; active-learning candidate vetting</text>
+  </g>
+
+  <!-- SPHEREx 102-Channel Spectral Ruler -->
+  <g transform="translate(36, 224)">
+    <text x="0" y="14" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#E2E8F0">SPHEREx LVF 102-Channel Spectrophotometric Bandpass (0.75 µm → 5.00 µm)</text>
+    <rect x="0" y="24" width="1128" height="14" rx="7" fill="url(#specBar)"/>
+    <text x="0" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#93C5FD">0.75 µm (NIR)</text>
+    <text x="260" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#6EE7B7">1.40 µm (H₂O)</text>
+    <text x="530" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#FDE68A">2.30 µm (CO / CH₄)</text>
+    <text x="820" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#FDBA74">3.30 µm (PAH / Ice)</text>
+    <text x="1048" y="54" font-family="ui-monospace, monospace" font-size="11" fill="#FCA5A5">5.00 µm (MIR)</text>
+  </g>
+</svg>

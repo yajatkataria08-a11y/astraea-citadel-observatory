@@ -1,0 +1,21 @@
+{
+  "ingest_timestamp_utc": "2026-11-10T19:48:03.004280+00:00",
+  "source": "NASA Exoplanet Archive Verified Research Mirror (Elisa Quintana NASA exoplots repository)",
+  "tables": {
+    "ps": {
+      "rows": 4296,
+      "columns": 415,
+      "path": "data\\raw\\ps_confirmed_default.parquet"
+    },
+    "koi": {
+      "rows": 8054,
+      "columns": 154,
+      "path": "data\\raw\\koi_cumulative.parquet"
+    },
+    "toi": {
+      "rows": 2377,
+      "columns": 55,
+      "path": "data\\raw\\toi_catalog.parquet"
+    }
+  }
+}

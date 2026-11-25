@@ -1,0 +1,40 @@
+{
+  "version": "v1_baseline",
+  "base_model_name": "random_forest",
+  "tess_weight_factor": 6.0,
+  "seed": 42,
+  "features": [
+    "period",
+    "duration",
+    "depth_log",
+    "rplanet_log",
+    "rstar",
+    "teff",
+    "logg",
+    "snr_log",
+    "dist",
+    "depth_diff",
+    "stellar_density_proxy",
+    "duty_cycle",
+    "pm_total"
+  ],
+  "metrics": {
+    "accuracy": 0.8858695652173914,
+    "roc_auc": 0.9260902636916837,
+    "pr_auc": 0.8381155759108536,
+    "precision": 0.873015873015873,
+    "recall": 0.8088235294117647,
+    "f1": 0.8396946564885496
+  },
+  "zero_shot_metrics": {
+    "accuracy": 0.7228260869565217,
+    "roc_auc": 0.7601419878296146,
+    "pr_auc": 0.6764305094652784,
+    "precision": 0.7297297297297297,
+    "recall": 0.39705882352941174,
+    "f1": 0.5142857142857142
+  },
+  "n_kepler_train": 6268,
+  "n_tess_train": 722,
+  "n_tess_test": 184
+}

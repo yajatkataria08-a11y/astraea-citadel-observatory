@@ -1,0 +1,11 @@
+fastapi>=0.110
+uvicorn>=0.29
+pandas>=2.0
+pyarrow>=14
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.3
+lightgbm>=4.0
+httpx>=0.27   # OAuth token exchange + tests
+# tests only
+pytest>=8

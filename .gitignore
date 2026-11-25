@@ -1,0 +1,149 @@
+# ============================================================
+# ASTRÆA Citadel Observatory — .gitignore
+# ============================================================
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# ── Secrets & credentials ────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.local.example
+*.key
+secret.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+secrets/
+credentials/
+
+# ── Databases & runtime state ────────────────────────────────
+*.sqlite3
+*.sqlite
+*.db
+backend/data/triage.sqlite3
+
+# ── Large binary / ML artefacts ──────────────────────────────
+*.joblib
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+# Keep JSON checkpoint metadata, exclude heavy model binaries
+astro/checkpoints/*.joblib
+
+# ── Data files (large parquet datasets) ──────────────────────
+# Keep small sample files if added, exclude raw catalog dumps
+# astro/data/raw/*.parquet   <- keeping these (< 6 MB total, good for reproducibility)
+
+# ── Node.js / Next.js ────────────────────────────────────────
+node_modules/
+.next/
+out/
+.nuxt/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.yarn-integrity
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Frontend env ─────────────────────────────────────────────
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# ── OS artefacts ─────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── IDE / Editor ─────────────────────────────────────────────
+.vscode/settings.json
+.vscode/*.log
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs ─────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+
+# ── Archives / temp ──────────────────────────────────────────
+*.zip
+*.tar.gz
+*.rar
+frontend.zip
+
+# ── Graphify cache (auto-generated) ──────────────────────────
+astro/graphify-out/
+
+# ── Scratch / temp scripts ───────────────────────────────────
+scratch_*.py
+temp_*.py
+test_draft_*.py
+
+# ── Coverage & test artefacts ────────────────────────────────
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# ── Jupyter ──────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── MyPy / type stubs ────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json

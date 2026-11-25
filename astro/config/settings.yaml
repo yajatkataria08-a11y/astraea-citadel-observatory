@@ -1,0 +1,41 @@
+# Pipeline Configuration Settings (Revision 5, 9 November 2026)
+
+general:
+  random_seed: 42
+  data_snapshot_date: "2026-11-09"
+
+project_b:
+  b1_physics:
+    n_monte_carlo_draws: 10000
+    stability_check_draws: 50000
+    hz_valid_teff_min_k: 2600.0
+    hz_valid_teff_max_k: 7200.0
+    k_sigmoid_gate: 2.0
+    tsm_hz_threshold: 10.0
+    tsm_subnep_threshold: 90.0
+    esm_threshold: 7.5
+    conformal_coverage_nominal: 0.95
+  b2_vetting:
+    n_repeats: 5
+    n_folds: 5
+    test_ratio: 0.20
+    calibrator_sample_threshold: 1000  # min per class for isotonic, else platt
+    target_precision_recall_metric: 0.99
+    bootstrap_samples: 500
+
+project_a:
+  healpix:
+    nside: 16
+    ordering: "RING"
+    d_buf_deg: 3.7
+  quarantine:
+    min_valid_channels: 90
+    max_flagged_fraction: 0.15
+    bright_star_sep_arcsec: 30.0
+    edge_pixel_margin: 8
+  variability:
+    fdr_q_level: 0.05
+    sign_flip_bootstrap_draws: 1000
+  anomaly:
+    pca_components: 5
+    isolation_forest_contamination: 0.01

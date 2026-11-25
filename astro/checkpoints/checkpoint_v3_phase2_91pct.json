@@ -1,0 +1,45 @@
+{
+  "version": "v3_phase2",
+  "base_model_name": "blend_ensemble",
+  "use_feda": true,
+  "calibrate": true,
+  "decision_threshold": 0.4,
+  "tess_weight_factor": 6.0,
+  "seed": 42,
+  "metrics": {
+    "accuracy": 0.907608695652174,
+    "roc_auc": 0.9504310344827587,
+    "pr_auc": 0.9031564362871654,
+    "precision": 0.9180327868852459,
+    "recall": 0.8235294117647058,
+    "f1": 0.8682170542635659,
+    "brier_score": 0.08486971529868889,
+    "confusion_matrix": {
+      "tn": 111,
+      "fp": 5,
+      "fn": 12,
+      "tp": 56
+    }
+  },
+  "zero_shot_metrics": {
+    "accuracy": 0.6956521739130435,
+    "roc_auc": 0.7446754563894524,
+    "pr_auc": 0.6179325748682382,
+    "precision": 0.6666666666666666,
+    "recall": 0.35294117647058826,
+    "f1": 0.46153846153846156,
+    "brier_score": 0.1963383650034986
+  },
+  "diff": {
+    "accuracy": 0.2119565217391305,
+    "roc_auc": 0.20575557809330625,
+    "pr_auc": 0.2852238614189272,
+    "precision": 0.2513661202185793,
+    "recall": 0.4705882352941176,
+    "f1": 0.4066785927251043,
+    "brier_score": -0.11146864970480971
+  },
+  "n_kepler_train": 6268,
+  "n_tess_train": 722,
+  "n_tess_test": 184
+}

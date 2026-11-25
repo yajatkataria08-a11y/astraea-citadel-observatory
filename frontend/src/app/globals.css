@@ -1,0 +1,731 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ============================================================
+     LIGHT THEME (Starlight & Marble / Royal Ink / Solar Flare)
+     ============================================================ */
+  :root {
+    /* 60% Dominant Background: Alabaster / Pearlescent White */
+    --background: 45 25% 97%; /* #FAF9F6 */
+    --foreground: 244 47% 20%; /* #1E1B4B Deep Royal Indigo */
+    
+    /* Secondary structure / cards: Moonstone #F1F5F9 */
+    --card: 210 40% 96%;
+    --card-foreground: 244 47% 20%;
+    --popover: 45 25% 98%;
+    --popover-foreground: 244 47% 20%;
+    
+    /* 10% Accent: Cosmic Cobalt #3B82F6 & Electric Periwinkle #4F46E5 */
+    --primary: 243 75% 58%; /* #4F46E5 */
+    --primary-foreground: 45 25% 98%;
+    
+    --secondary: 210 40% 96%; /* #F1F5F9 Moonstone */
+    --secondary-foreground: 244 47% 20%;
+    
+    --muted: 225 25% 95%; /* #EDEFF5 Pale Mist */
+    --muted-foreground: 217 33% 36%; /* #334155 Midnight Slate */
+    
+    /* Dusty Amethyst / Soft Lavender Mist #DDD6FE */
+    --accent: 251 91% 94%; /* #DDD6FE */
+    --accent-foreground: 263 70% 35%; /* #6D28D9 */
+    
+    --destructive: 345 75% 42%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 225 25% 88%;
+    --input: 225 25% 88%;
+    
+    /* Antique / Burnished Gold #B48A28 */
+    --ring: 42 64% 43%;
+    --radius: 0.85rem;
+  }
+
+  /* ============================================================
+     DARK THEME (60% Deep Space Void / 30% Royal Velvet / 10% Starlight)
+     ============================================================ */
+  .dark {
+    /* 60% Dominant Void: Obsidian Black #090A0F */
+    --background: 231 28% 5%; /* #090A0F */
+    --foreground: 215 28% 93%; /* #E2E8F0 Soft Platinum Starlight */
+    
+    /* 30% Structure / Cards: Midnight Navy #0D111E */
+    --card: 228 32% 8%; /* #0D111E */
+    --card-foreground: 215 28% 93%;
+    --popover: 228 32% 8%;
+    --popover-foreground: 215 28% 93%;
+    
+    /* 30% Royal Blue / Cobalt #2E4A9E / #408EC6 */
+    --primary: 223 55% 52%; /* #408EC6 */
+    --primary-foreground: 231 28% 5%;
+    
+    --secondary: 229 28% 13%; /* #171C2E */
+    --secondary-foreground: 215 28% 93%;
+    
+    --muted: 229 26% 12%;
+    --muted-foreground: 217 18% 66%; /* #9BA6B8 */
+    --accent: 229 28% 15%;
+    --accent-foreground: 215 28% 93%;
+    
+    --destructive: 345 68% 54%;
+    --destructive-foreground: 215 28% 93%;
+    
+    --border: 229 25% 18%; /* #22293F */
+    --input: 229 25% 18%;
+    
+    /* 10% Accent: Champagne Gold #D4AF37 */
+    --ring: 43 65% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ============================================================
+   NEBULA VOID BACKDROP (Optimized Hardware Accelerated)
+   ============================================================ */
+.cosmic-void-canvas {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  contain: paint;
+}
+
+/* 1. DARK MODE: 60% The Deep Space Void (#090A0F, #0F1322, #1E2761) */
+html.dark body {
+  background-color: #090A0F !important;
+}
+
+html.dark .cosmic-void-canvas,
+.dark .cosmic-void-canvas {
+  background-color: transparent !important;
+  color: #E2E8F0 !important;
+  background-image: none !important;
+}
+
+/* 2. LIGHT MODE: 60% Starlight & Marble (#FAF9F6, #F1F5F9) */
+html:not(.dark):not(.urja) .cosmic-void-canvas,
+html.light:not(.urja) .cosmic-void-canvas {
+  background-color: #FAF9F6 !important;
+  color: #1E1B4B !important;
+  background-attachment: fixed;
+  background-image: 
+    radial-gradient(ellipse 95% 65% at 50% -8%, rgba(221, 214, 254, 0.5) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 45% at 92% 20%, rgba(180, 138, 40, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 40% at 8% 75%, rgba(59, 130, 246, 0.1) 0%, transparent 60%),
+    radial-gradient(circle 1.2px at 32px 32px, rgba(180, 138, 40, 0.2) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px;
+}
+
+html.urja .cosmic-void-canvas {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #11162B !important;
+}
+
+/* ============================================================
+   ROYAL FUTURISTIC GLASSMORPHISM (Optimized)
+   ============================================================ */
+
+/* Primary Command Deck Glass Panels - DARK MODE */
+html.dark .glass-royal-deck,
+.dark .glass-royal-deck {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(10, 14, 28, 0.94) !important;
+  border: 1px solid rgba(212, 175, 55, 0.28) !important;
+  color: #E2E8F0 !important;
+  box-shadow: 
+    0 12px 36px -10px rgba(0, 0, 0, 0.7),
+    0 1px 0 rgba(229, 193, 88, 0.2) inset;
+  transform: translateZ(0);
+}
+
+/* Primary Command Deck Glass Panels - LIGHT MODE */
+html:not(.dark) .glass-royal-deck,
+html.light .glass-royal-deck {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(250, 249, 246, 0.96) !important;
+  border: 1px solid rgba(180, 138, 40, 0.3) !important;
+  color: #1E1B4B !important;
+  box-shadow: 
+    0 12px 32px -10px rgba(30, 27, 75, 0.08),
+    0 1px 0 rgba(197, 155, 39, 0.3) inset;
+  transform: translateZ(0);
+}
+
+/* Translucent Cards - DARK MODE (More Opaque & Solid for High Contrast) */
+html.dark .glass-royal-card,
+.dark .glass-royal-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(11, 16, 32, 0.93) !important;
+  border: 1px solid rgba(226, 232, 240, 0.16) !important;
+  color: #E2E8F0 !important;
+  box-shadow: 
+    0 4px 18px -4px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 255, 255, 0.07) inset;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.22s ease, background 0.2s ease;
+  transform: translateZ(0);
+}
+
+html.dark .glass-royal-card:hover,
+.dark .glass-royal-card:hover {
+  will-change: transform;
+  background: rgba(26, 34, 76, 0.75) !important;
+  border-color: rgba(212, 175, 55, 0.6) !important;
+  box-shadow: 
+    0 16px 36px -8px rgba(0, 0, 0, 0.8),
+    0 0 24px rgba(212, 175, 55, 0.2),
+    0 0 12px rgba(165, 243, 252, 0.12);
+  transform: translateY(-4px) translateZ(0);
+}
+
+html.dark .glass-royal-card:active,
+.dark .glass-royal-card:active {
+  background: rgba(18, 24, 48, 0.85) !important;
+  border-color: rgba(212, 175, 55, 0.7) !important;
+  box-shadow: 
+    0 4px 14px -3px rgba(0, 0, 0, 0.6),
+    0 0 14px rgba(212, 175, 55, 0.15) inset;
+  transform: translateY(-1px) scale(0.99) translateZ(0);
+}
+
+/* Translucent Cards - LIGHT MODE */
+html:not(.dark) .glass-royal-card,
+html.light .glass-royal-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(250, 250, 252, 0.96) !important;
+  border: 1px solid rgba(30, 27, 75, 0.16) !important;
+  color: #1E1B4B !important;
+  box-shadow: 
+    0 4px 16px -4px rgba(30, 27, 75, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.22s ease, background 0.2s ease;
+  transform: translateZ(0);
+}
+html.light .glass-royal-card:hover {
+  will-change: transform;
+}
+
+html:not(.dark) .glass-royal-card:hover,
+html.light .glass-royal-card:hover {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(180, 138, 40, 0.6) !important;
+  box-shadow: 
+    0 16px 36px -8px rgba(30, 27, 75, 0.14),
+    0 0 22px rgba(180, 138, 40, 0.2),
+    0 0 10px rgba(59, 130, 246, 0.1);
+  transform: translateY(-4px) translateZ(0);
+}
+
+html:not(.dark) .glass-royal-card:active,
+html.light .glass-royal-card:active {
+  background: rgba(235, 240, 248, 0.95) !important;
+  border-color: rgba(180, 138, 40, 0.7) !important;
+  box-shadow: 
+    0 4px 12px -3px rgba(30, 27, 75, 0.08),
+    0 0 12px rgba(180, 138, 40, 0.12) inset;
+  transform: translateY(-1px) scale(0.99) translateZ(0);
+}
+
+/* Corner Reticle Accents for Astrometric HUD */
+.reticle-bracket-tl {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+
+.reticle-bracket-br {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+}
+
+html.dark .reticle-bracket-tl,
+.dark .reticle-bracket-tl {
+  border-top: 1.5px solid rgba(212, 175, 55, 0.7);
+  border-left: 1.5px solid rgba(212, 175, 55, 0.7);
+}
+
+html.dark .reticle-bracket-br,
+.dark .reticle-bracket-br {
+  border-bottom: 1.5px solid rgba(212, 175, 55, 0.7);
+  border-right: 1.5px solid rgba(212, 175, 55, 0.7);
+}
+
+html:not(.dark) .reticle-bracket-tl,
+html.light .reticle-bracket-tl {
+  border-top: 1.5px solid rgba(180, 138, 40, 0.85);
+  border-left: 1.5px solid rgba(180, 138, 40, 0.85);
+}
+
+html:not(.dark) .reticle-bracket-br,
+html.light .reticle-bracket-br {
+  border-bottom: 1.5px solid rgba(180, 138, 40, 0.85);
+  border-right: 1.5px solid rgba(180, 138, 40, 0.85);
+}
+
+/* Subtle Shimmer Sweeper (Hardware Accelerated) */
+@keyframes sheenSweep {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+.sheen-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.sheen-sweep::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 100%
+  );
+  animation: sheenSweep 5s infinite ease-in-out;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html.dark ::-webkit-scrollbar-track,
+.dark ::-webkit-scrollbar-track {
+  background: #090A0F;
+}
+html.dark ::-webkit-scrollbar-thumb,
+.dark ::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: rgba(212, 175, 55, 0.3);
+}
+html.dark ::-webkit-scrollbar-thumb:hover,
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}
+
+html:not(.dark) ::-webkit-scrollbar-track,
+html.light ::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb,
+html.light ::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: rgba(180, 138, 40, 0.35);
+}
+html:not(.dark) ::-webkit-scrollbar-thumb:hover,
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 138, 40, 0.65);
+}
+
+/* Selection Styling */
+html.dark ::selection,
+.dark ::selection {
+  background: rgba(46, 74, 158, 0.6);
+  color: #F8FAFC;
+}
+
+html:not(.dark) ::selection,
+html.light ::selection {
+  background: rgba(221, 214, 254, 0.7);
+  color: #1E1B4B;
+}
+
+/* Prevent layout shift */
+.prevent-cls {
+  contain: layout style;
+}
+
+/* ============================================================
+   TACTILE INTERACTION SUITE (High-Response Hover & Active States)
+   ============================================================ */
+
+/* 1. Universal Tactile Press Button */
+.interactive-press {
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.16s ease, 
+              border-color 0.16s ease, 
+              background-color 0.16s ease, 
+              filter 0.16s ease;
+}
+
+.interactive-press:hover {
+  will-change: transform;
+  transform: translateY(-1.5px) scale(1.02);
+}
+
+.interactive-press:active {
+  transform: translateY(1px) scale(0.96);
+  filter: brightness(0.95);
+}
+
+/* 2. Cosmic Champagne Gold Hover Aura */
+html.dark .interactive-glow-gold:hover {
+  border-color: rgba(212, 175, 55, 0.8) !important;
+  box-shadow: 0 0 20px -2px rgba(212, 175, 55, 0.35),
+              0 0 6px rgba(212, 175, 55, 0.2) inset !important;
+}
+html.dark .interactive-glow-gold:active {
+  border-color: rgba(229, 193, 88, 0.95) !important;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4) inset !important;
+}
+
+html:not(.dark) .interactive-glow-gold:hover {
+  border-color: rgba(180, 138, 40, 0.8) !important;
+  box-shadow: 0 0 18px -2px rgba(180, 138, 40, 0.28),
+              0 0 6px rgba(180, 138, 40, 0.15) inset !important;
+}
+html:not(.dark) .interactive-glow-gold:active {
+  border-color: rgba(180, 138, 40, 0.95) !important;
+  box-shadow: 0 0 10px rgba(180, 138, 40, 0.3) inset !important;
+}
+
+/* 3. Astral Cyan Hover Aura */
+html.dark .interactive-glow-cyan:hover {
+  border-color: rgba(165, 243, 252, 0.7) !important;
+  box-shadow: 0 0 20px -2px rgba(59, 130, 246, 0.4),
+              0 0 6px rgba(165, 243, 252, 0.2) inset !important;
+}
+html.dark .interactive-glow-cyan:active {
+  border-color: rgba(165, 243, 252, 0.9) !important;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.35) inset !important;
+}
+
+/* 4. Interactive Table Row / Filter Item */
+.interactive-row {
+  position: relative;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.interactive-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 3px;
+  border-radius: 9999px;
+  background: transparent;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+  transform: scaleY(0.4);
+}
+html.dark .interactive-row:hover::before {
+  background: #D4AF37;
+  transform: scaleY(1);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+html:not(.dark) .interactive-row:hover::before {
+  background: #B48A28;
+  transform: scaleY(1);
+  box-shadow: 0 0 8px rgba(180, 138, 40, 0.8);
+}
+.interactive-row:active {
+  transform: scale(0.995);
+}
+
+/* 5. Accessible High-Definition Focus Ring */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.7),
+              0 0 14px rgba(212, 175, 55, 0.3) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   JUNGO MODE — special overrides for the third theme (dark + glowing stars)
+   html.jungo is added alongside html.dark when in JUNGO mode.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Nebula blobs pulse a little brighter in JUNGO mode */
+html.jungo .animate-nebula {
+  opacity: 1.0;
+  animation-duration: 7s;
+}
+
+/* Navbar sliding gold bar glows more intensely in JUNGO mode */
+html.jungo .glass-royal-deck {
+  box-shadow: 0 1px 0 rgba(212, 175, 55, 0.25), 0 0 40px rgba(92, 29, 66, 0.15);
+}
+
+/* JUNGO badge for the theme-switcher button tooltip area */
+.jungo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #D4AF37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+  animation: jungo-pulse 2.5s ease-in-out infinite;
+}
+@keyframes jungo-pulse {
+  0%, 100% { opacity: 0.75; text-shadow: 0 0 6px rgba(212, 175, 55, 0.6); }
+  50%       { opacity: 1.0;  text-shadow: 0 0 14px rgba(212, 175, 55, 1); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   URJA MODE ⚡ — Colorful Interactive Daylight Theme (Warm Alabaster + Solar Gold + Amethyst)
+   html.urja is added alongside html.light when in URJA mode.
+   ══════════════════════════════════════════════════════════════════════════ */
+html.urja {
+  --background: 40 33% 97%; /* #FAF8F5 Starlight Alabaster */
+  --foreground: 228 43% 12%; /* #11162B Deep Void Indigo */
+  --card: 43 35% 91%; /* #F0ECE1 Celestial Parchment */
+  --card-foreground: 228 43% 12%;
+  --primary: 227 49% 23%; /* #1E2B58 Imperial Navy */
+  --primary-foreground: 40 33% 98%;
+  --secondary: 43 35% 91%; /* #F0ECE1 */
+  --secondary-foreground: 228 43% 12%;
+  --muted-foreground: 223 17% 35%; /* #4A5268 Nebula Slate */
+  --accent: 256 30% 42%; /* #5B4B8A Astral Amethyst */
+  --accent-foreground: 40 33% 98%;
+  --border: 41 23% 83%; /* #DFD8C8 Gilded Mist */
+  --ring: 43 67% 46%; /* #C59B27 Astrolabe Gold */
+}
+
+html.urja body {
+  background-color: #FAF8F5 !important;
+  color: #11162B !important;
+}
+
+html.urja .glass-royal-deck {
+  background: rgba(240, 236, 225, 0.94) !important;
+  border-color: rgba(197, 155, 39, 0.35) !important;
+  box-shadow: 0 1px 0 rgba(197, 155, 39, 0.3), 0 10px 30px -10px rgba(91, 75, 138, 0.12);
+}
+
+html.urja .glass-royal-card {
+  background: rgba(245, 242, 234, 0.95) !important;
+  border-color: rgba(197, 155, 39, 0.28) !important;
+  box-shadow: 0 4px 18px -4px rgba(30, 43, 88, 0.08), 0 0 16px rgba(197, 155, 39, 0.08);
+}
+
+html.urja .glass-royal-card:hover {
+  background: rgba(255, 253, 248, 0.98) !important;
+  border-color: rgba(197, 155, 39, 0.6) !important;
+  box-shadow: 0 16px 36px -8px rgba(30, 43, 88, 0.14), 0 0 24px rgba(197, 155, 39, 0.25);
+}
+
+/* URJA badge for the theme-switcher button */
+.urja-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #C59B27;
+  text-shadow: 0 0 8px rgba(197, 155, 39, 0.7);
+  animation: urja-pulse 2.2s ease-in-out infinite;
+}
+@keyframes urja-pulse {
+  0%, 100% { opacity: 0.8; text-shadow: 0 0 6px rgba(197, 155, 39, 0.6); }
+  50%       { opacity: 1.0; text-shadow: 0 0 14px rgba(197, 155, 39, 1), 0 0 20px rgba(91, 75, 138, 0.4); }
+}
+
+html.urja nav button .lucide-zap {
+  filter: drop-shadow(0 0 5px rgba(197, 155, 39, 0.85))
+          drop-shadow(0 0 10px rgba(91, 75, 138, 0.4));
+  animation: urja-zap-pulse 2s ease-in-out infinite;
+}
+@keyframes urja-zap-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(197,155,39,0.7)) drop-shadow(0 0 8px rgba(91,75,138,0.3)); }
+  50%       { filter: drop-shadow(0 0 9px rgba(197,155,39,1.0)) drop-shadow(0 0 16px rgba(197,155,39,0.7)); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SMOOTHNESS — global micro-interaction polish
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Smoother theme-toggle button size transitions (light↔dark↔jungo) */
+nav button {
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              background-color 0.25s ease;
+}
+
+/* Bug icon in JUNGO mode: subtle glow animation */
+html.jungo nav button .lucide-bug {
+  filter: drop-shadow(0 0 5px rgba(165, 243, 252, 0.85))
+          drop-shadow(0 0 10px rgba(165, 243, 252, 0.4));
+  animation: jungo-bug-pulse 2s ease-in-out infinite;
+}
+@keyframes jungo-bug-pulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(165,243,252,0.7)) drop-shadow(0 0 8px rgba(165,243,252,0.3)); }
+  50%       { filter: drop-shadow(0 0 9px rgba(165,243,252,1.0)) drop-shadow(0 0 18px rgba(165,243,252,0.6)); }
+}
+
+/* Light mode: custom cursor crosshair subtlety */
+html.light body {
+  cursor: default;
+}
+
+/* Scroll-reveal transition: use GPU-only properties */
+/* [data-scroll-reveal] will-change managed adaptively */
+
+/* Smoother card hover transitions site-wide */
+.glass-royal-card,
+.glass-royal-deck,
+.glass-card-deck,
+.glass-data-panel,
+.glass-metric-badge {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s ease,
+              background 0.22s ease !important;
+}
+
+/* Butter-smooth page content reveal on load / route navigation */
+main {
+  animation: pageFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  0% {
+    opacity: 0.88;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Enhanced Micro-interactions & Auth Glow ---------- */
+.interactive-hover-lift {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease !important;
+}
+.interactive-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.22),
+              0 0 15px rgba(165, 243, 252, 0.15);
+}
+.interactive-hover-lift:active {
+  transform: translateY(0px) scale(0.985);
+}
+
+.cosmic-input {
+  transition: border-color 0.2s ease,
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease;
+}
+.cosmic-input:hover:not(:focus) {
+  border-color: rgba(212, 175, 55, 0.55);
+}
+.cosmic-input:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2),
+              0 0 18px rgba(212, 175, 55, 0.18);
+}
+
+.auth-button-glow {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.2s ease;
+}
+.auth-button-glow:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(212, 175, 55, 0.4),
+              0 8px 20px -4px rgba(46, 74, 158, 0.5);
+  filter: brightness(1.06);
+}
+.auth-button-glow:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+/* ---------- Ultra-Smooth Sliding Auth Card ---------- */
+.auth-stage {
+  --pos: 0;
+  contain: paint;
+  will-change: transform;
+}
+
+.auth-track {
+  display: flex;
+  width: 200%;
+  transform: translateX(calc(var(--pos) * -50%));
+  transition: transform 0.55s cubic-bezier(0.32, 0.72, 0, 1);
+  will-change: transform;
+}
+
+.auth-pane {
+  width: 50%;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.auth-overlay {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .auth-track {
+    width: 100%;
+    transform: none;
+  }
+  .auth-overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    z-index: 10;
+    transform: translateX(calc((1 - var(--pos)) * 100%));
+    transition: transform 0.55s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.3s ease;
+    touch-action: pan-y;
+    cursor: grab;
+    will-change: transform;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  .auth-overlay.dragging {
+    transition: none;
+    cursor: grabbing;
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-track, .auth-overlay, .auth-pane {
+    transition-duration: 0.01ms !important;
+  }
+}
