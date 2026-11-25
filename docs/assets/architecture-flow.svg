@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 560" width="1200" height="560">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560">
 <defs>
   <linearGradient id="archbg" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
     <stop offset="0%" stop-color="#07101E"/>
@@ -197,27 +197,21 @@
 <!-- Moving data packets -->
 <circle r="4" fill="#C084FC" opacity=".8">
   <animate attributeName="opacity" values="0;.9;.9;0" dur="2.5s" repeatCount="indefinite"/>
-  <animateMotion dur="2.5s" repeatCount="indefinite">
-    <mpath xlink:href="#path12"/>
-  </animateMotion>
+  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 285,220 L 305,220"/>
 </circle>
-<path id="path12" d="M 285,220 L 305,220" fill="none"/>
+
 
 <circle r="4" fill="#A5F3FC" opacity=".8">
   <animate attributeName="opacity" values="0;.9;.9;0" dur="2.5s" repeatCount="indefinite" begin="1s"/>
-  <animateMotion dur="2.5s" repeatCount="indefinite" begin="1s">
-    <mpath xlink:href="#path23"/>
-  </animateMotion>
+  <animateMotion dur="2.5s" repeatCount="indefinite" begin="1s" path="M 559,220 L 579,220"/>
 </circle>
-<path id="path23" d="M 559,220 L 579,220" fill="none"/>
+
 
 <circle r="4" fill="#34D399" opacity=".8">
   <animate attributeName="opacity" values="0;.9;.9;0" dur="2.5s" repeatCount="indefinite" begin="2s"/>
-  <animateMotion dur="2.5s" repeatCount="indefinite" begin="2s">
-    <mpath xlink:href="#path34"/>
-  </animateMotion>
+  <animateMotion dur="2.5s" repeatCount="indefinite" begin="2s" path="M 843,220 L 863,220"/>
 </circle>
-<path id="path34" d="M 843,220 L 863,220" fill="none"/>
+
 
 <!-- FOOTER -->
 <rect x="0" y="528" width="1200" height="32" fill="#040A14"/>
